@@ -1,0 +1,10 @@
+$(document).ready(()=>{
+    $("Resgister_link").click(()=>{
+        $("#form1").toggle();
+    });
+});
+$(document).ready(()=>{
+    $("Submit").click(()=>{
+        $("login").toggle();
+    });
+});
