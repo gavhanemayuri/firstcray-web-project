@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location Selector by PIN Code</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            margin-top: 50px;
+        }
+        h2 {
+            text-align: center;
+            color: black;
+        }
+        .result-box {
+            background: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        button{
+            background-color:  #d76028;
+            border: none;
+        }
+        button:hover{
+            background-color:goldenrod;
+
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Select Location by PIN Code</h2>
+        <label for="pinCode" class="form-label mt-3">Enter PIN Code:</label>
+        <input type="text" id="pinCode" class="form-control" placeholder="Enter PIN Code" maxlength="6">
+        <button class="w-100 mt-3" onclick="getLocation()">Get Location</button>
+        
+        <div class="result-box mt-3">
+            <h5>Location Details:</h5>
+            <p><strong>City:</strong> <span id="city">-</span></p>
+            <p><strong>State:</strong> <span id="state">-</span></p>
+        </div>
+    </div>
+
+    <script>
+        function getLocation() {
+            let pinCode = document.getElementById("pinCode").value;
+            let locations = {
+                "110001": { city: "New Delhi", state: "Delhi" },
+                "400001": { city: "Mumbai", state: "Maharashtra" },
+                "560001": { city: "Bangalore", state: "Karnataka" },
+                "600001": { city: "Chennai", state: "Tamil Nadu" },
+                "700001": { city: "Kolkata", state: "West Bengal" }
+            };
+
+            if (locations[pinCode]) {
+                document.getElementById("city").innerText = locations[pinCode].city;
+                document.getElementById("state").innerText = locations[pinCode].state;
+            } else {
+                document.getElementById("city").innerText = "Invalid PIN Code";
+                document.getElementById("state").innerText = "-";
+            }
+        }
+    </script>
+
+</body>
+</html>

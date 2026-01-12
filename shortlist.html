@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Shortlist</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light background */
+        }
+        .shortlist-container {
+            max-width: 600px; 
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Centered Container -->
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="shortlist-container text-center p-4">
+            <h1 class="mb-3">My Shortlist <small>(<span id="count">0</span> Products)</small></h1>
+            <p id="a1" class="text-muted">You have not shortlisted any product yet.</p>
+            <button id="button1" class="btn btn-warning btn-lg mt-3">Start Shopping</button>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Load shortlisted products from localStorage
+            let shortlist = JSON.parse(localStorage.getItem("shortlist")) || [];
+
+            // Update the count dynamically
+            document.getElementById("count").textContent = shortlist.length;
+
+            // If there are products, update the message
+            if (shortlist.length > 0) {
+                document.getElementById("a1").textContent = "You have " + shortlist.length + " product(s) in your shortlist.";
+            }
+
+            // "Start Shopping" button redirects to shopping page
+            document.getElementById("button1").addEventListener("click", function () {
+                window.location.href = "index.html"; // Change to your actual shopping page
+            });
+        });
+    </script>
+
+</body>
+</html>

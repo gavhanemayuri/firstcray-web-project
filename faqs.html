@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shipping Policies</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        fieldset {
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+
+    /* nanbar first */
+    .navbar-nav {
+            display: flex;
+            align-items: center;
+        }
+        .nav-item {
+            display: flex;
+            align-items: center;
+            /* font-size: 13px; */
+        }
+        #l1:not(:last-child)::after {
+            content: " | ";
+            color: black; /* Pipe color */
+            padding: 0 4px; /* Space around the pipe */
+        }
+
+        /* second navbar */
+        /* Ensures proper spacing for navbar items */
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+       
+
+        /* Makes the navbar horizontally scrollable on small screens */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                overflow-x: auto;
+                white-space: nowrap;
+                flex-wrap: nowrap;
+            }
+            .navbar-nav {
+                flex-direction: row;
+            }
+            /* Remove pipe separator for mobile view */
+            .nav-item:not(:last-child)::after {
+                content: none;
+            }
+        }
+
+     
+
+        /* footer */
+        .footer {
+            background-color:lightblue;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .footer a {
+            text-decoration: none;
+            color: #6c757d;
+        }
+        .footer a:hover {
+            color: #007bff;
+        }
+        
+/* footer text */
+.custom-box {
+            font-size: 20px;
+            background-color: white;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            max-width: 90%; /* Allows it to scale on smaller screens */
+            width: 400px; /* Default width */
+            margin: auto; /* Centers the box */
+
+        }
+       
+   
+    </style>
+</head>
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-light">
+        <div class="container-fluid" id="productList">
+          <form class="d-flex Container" style="width: 600px;">
+            <img src="fc_logo.png" class="img-fluid">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 300px; margin-left: 10px;">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+    
+            <!-- navbar -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                  <i class="fa fa-map-marker" style="font-size:15px"></i>  
+                                <li class="nav-item" id="l1"><a class="nav-link" href="location.html" style="color: black; font-size: medium;">select location</a></li>
+                    <li class="nav-item" id="l1"><a class="nav-link" href="login.html" style="color: black; font-size: medium;">login/register</a></li>
+                    <i class="fa-regular fa-heart"></i>
+                    <li class="nav-item" id="l1"><a class="nav-link" href="shortlist.html" style="color: black; font-size: medium;">shortlist</a></li>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <li class="nav-item" id="l1"><a class="nav-link" href="cart.html" style="color: black; font-size: medium;"></i>Cart</a></li>
+    
+                    <li class="nav-item dropdown" id="l1">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black; font-size: medium;">
+                          My Account
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="profile.html" style="font-size:medium;">My Profile</a></li>
+                            <li><a class="dropdown-item" href="shortlist.html" style="font-size:medium;">My Shortlist</a></li>
+                            <li><a class="dropdown-item" href="history.html" style="font-size:medium;">Order History</a></li>
+                            <li><a class="dropdown-item" href="logout.html" style="font-size:medium;">Logout</a></li>
+        
+        
+                        </ul>
+                    </li>
+                    
+                </ul>
+               
+            </div>
+        </div>
+    </nav>
+      
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+      <div class="container-fluid">
+          
+          <!-- Toggle Button for Mobile -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <!-- Collapsible Navbar Content -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        ALL CATEGORIES
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="boys.html">BOY FASHION</a></li>
+                          <li><a class="dropdown-item" href="girls.html">GIRL FASHION</a></li>
+                          <li><a class="dropdown-item" href="footwear.html">FOOTWEAR</a></li>
+                          <li><a class="dropdown-item" href="toys.html">TOYS</a></li>
+                          <li><a class="dropdown-item" href="feeding.html">FEEDING</a></li>
+                          <li><a class="dropdown-item" href="nursery.html">NURSERY</a></li>
+    
+    
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      </ul>
+                  </li>
+    
+                  <li class="nav-item"><a class="nav-link active" href="boys.html">BOY FASHION</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="girls.html">GIRL FASHION</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="footwear.html">FOOTWEAR</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="toys.html">TOYS</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="feeding.html">FEEDING</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="nursery.html">NURSERY</a></li>
+              </ul>
+          </div>
+      </div>
+    </nav>
+    
+    <!-- policy -->
+<div class="container my-4">
+    <fieldset>
+        <div class="text-center">
+            <h1 class="fw-bold text-dark">F.A.Q.s</h1>
+        </div>
+        
+        <p>
+            <h6>What is Firstcry?</h6>
+            Firstcry is Asia's largest online store for baby and kids products. We cater to the needs of our buyers (mothers buying for their kids) from before the kid is born upto his/her early teens.
+            
+            <br><h6>What is the benefit of buying from Firstcry?</h6>
+            Our company philosophy is pretty simple: We want to offer the best possible deal for our customers for the products that we all want to buy for our children. Our endeavour is to ensure that you get the widest possible choice of top rated brands and products at the best possible price anywhere in India combined with best possible service and timely delivery of products at your doorstep.
+            
+            <br><h6>Where are the offices of FirstCry located?</h6>
+            Currently our office is located in Pune while the orders are shipped from our warehouses located across India.
+            
+            <br><h6>What products does Firstcry sell?</h6>
+            We sell products of all the leading brands for babies and kids across sections right from diapers, baby food, infant accessories, gears (strollers, high chairs),nursery furniture, clothes & footwear to toys and school products. We also stock items from some of the leading importers and domestic manufacturers of the country. The items undergo a thorough check by our QA team before they are stocked.
+            
+            <br> <h6>What's the minimum order value required to place an order?</h6>
+            To place an order, a minimum order value of Rs. 99 or more is required (Excluding COD charges, Shipping charges, or value reduced after the application of coupons or any other offer).
+            
+            <br><h6>How do I know my order has been confirmed?</h6>
+            After checking out during the payment process, you will get a confirmation that your payment has been processed successfully. You will also get a mail in your registered email id, along with an SMS to your registered mobile number confirming the order.
+            
+            <br><h6> How do I check my order status?</h6>
+            We will ship your package within 24 hours of receiving the order. We will also mail you the name of the courier company and the tracking number of your consignment to your registered email address. You will receive an SMS about the same. In case you do not receive an email from us within 24 hours of placing an order please check your spam folder. Tracking may not appear online for up to another 24 hours in some cases, so please wait until your package is scanned by the courier company. Alternatively, you can check the same in My Account page, where Track Shipment option gives you the current status of your order being shipped.
+            
+            <br><h6>Is it safe to use my Credit Card Online at Firstcry.com?</h6>
+            We accept VISA, MASTER, AMERICAN EXPRESS and DINERS Credit Cards issued in India and Debit cards of all banks issued in India. International credit/debit card issues by most of the popular card's networks are also accepted. So, now you can place orders with Firstcry from outside India and we will ship it to your dear ones in India. All your transactions online are protected & secured by SSL (secure socket layer) technology from GoDaddy.com. It encrypts your credit card and relevant information during the entire transaction process. This encryption makes your shopping experience safe and secure.
+            
+            <br><h6>What if an item is out of stock?</h6>
+            We make every effort to keep all products in stock. However, there may be times when unexpected demands exceed our supply. We will notify you at the time of check out if the item selected is not in stock. In the rare circumstance where the order has been accepted and due to some reasons we are not able to ship, we will notify you within 24 hours and the money will be returned to you in the same mode by which the payment was made within 10 working days. Some items (which are restocked regularly) and is temporarily out of stock may appear on display with an out of stock tag. You can use the Notify Me option and we will inform you once the product is replenished and available for sale.
+            
+            <br><h6>Are there any other hidden charges like Octroi or Entry tax?</h6>
+            You will get the final price during check out. Our prices are all inclusive and you need not pay anything extra.
+            
+            <br><h6>How are the products packaged?</h6>
+            Each of the individual products are securely packaged in bubble wrap and put into a box. The box is sealed well ensuring a safe delivery to your doorstep.
+            
+            <br><h6>Do you'll provide customer call service outside India?</h6>
+            Currently, we do not provide Customer call service outside India. If you are an international customer with any order or service-related queries you can reach us at - customercare@firstcry.com
+            
+            <br><h6>Can I register using an International Phone number?</h6>
+            Yes! You can register using an international phone number.
+            
+            If I have registered using an international Phone number can I use my club membership to shop offline at the Firstcry Stores?
+            Currently, you can not use your club membership at offline Firstcry stores if you have linked it to an international phone number. However, you can avail of the club discounts at the Firstcry app (Android or IOS) and website - www.firstcry.com & https://www.firstcry.ae
+            
+            <br><h6>Do you'll deliver products outside India?</h6>
+            Other than India (https://www.firstcry.com), we also have our presence in UAE with site domain being : https://www.firstcry.ae. However, both these sites are accessible to all and we do take orders from around the world provided the Orders shipping address from the respective site has to be of that country specific i.e. India or UAE.
+            
+            <br><h6> Is it mandatory to register before placing an order?</h6>
+            Yes, it is mandatory to register before placing an order on FirstCry. You can create an account on FirstCry by entering and verifying your email ID and phone number. You can choose to login via Facebook/Google account to place an order on FirstCry. It is recommended that you register with us in order to receive timely offers and also to maintain your Wishlist and account & address details.
+            
+            <br><h6> How long will it take to receive my orders?</h6>
+            For all areas serviced by reputed couriers, the delivery time would be within 3 to 4 business days after dispatch (business days exclude Sundays and other holidays). However items weighing over 2 kilos may take a couple of days longer to reach. For other areas the products will be shipped through Indian Postal Service and may take 1-2 weeks depending on the location.
+            
+            <br><h6>Can I ship different items in my order to different shipping addresses?</h6>
+            We can only process one shipping address per order. So, if you would like to order several items and ship to different people, please treat these as separate orders.
+            
+            <br><h6>Who pays for the shipping charges?</h6>
+            We provide Free Shipping on all Orders above or equal to Rs. 699/- (Excluding COD charges, Shipping charges, Taxes or value reduced after application of coupons or any other offer). For Orders below Rs. 699 (with exclusions as above), shipping charges of Rs. 50 will apply. On select pincodes and/or on select products, we may apply additional shipping costs irrespective of the order value.
+            
+            <br><h6>What is Platform and Convenience Fee?</h6>
+            FirstCry reserves the right to levy a Platform and Convenience charge on orders. Platform & Convenience fee is applied to help us continuously maintain and improve the hassle-free shopping and smooth fulfillment experience. This fee will not be subject to refund in the case of any form of item or order cancellation post-dispatch of the products.
+            
+            <br><h6>What is GST?</h6>
+            GST means Goods and Service Tax. It is a single indirect tax on the sale of goods and services throughout India. GST is applicable w.e.f. 1st July, 2017.
+            
+            <br><h6>How GST amount is calculated over and above the discounted price?</h6>
+            GST is calculated on the basis of rates mentioned under GST laws for each category of product, customer location and the applicable discount on the product at the time of purchase.
+            GST over and above the discounted price is applicable on products with discount of 19% and above. Please refer to Terms of Use for full details. The GST collected on the discounted price is duly deposited with the respective GST Authorities having jurisdiction or adjusted as per the applicable GST Act and Rules
+            
+            <br><h6> Do I have to pay GST on purchase of Gift Certificate & Guaranteed Savings Offer?</h6>
+            No. GST is not charged from customers on buying Gift Certificates and Guaranteed Savings Offer.
+            
+            <br><h6> Will my GST amount be refunded on Order Cancellation and Returns?</h6> 
+           Yes. GST amount collected will be returned to customer's source method at the time of Cancellation and Returns.
+            
+           <br><h6>What to do if GST amount on purchased products comes out to be more than the limit defined by the Govt.?</h6>
+            We are ready to share all details of GST for your kind perusal and would happily return your money back in case we found any excessive amount being charged due to miscalculation.
+            
+            <br><h6>What happens if I am not available at the time of delivery?</h6>
+            Our delivery partners will attempt to deliver the package thrice before it is returned back to our warehouse. Please provide your mobile number in the delivery address as it will help in making a faster delivery.
+            
+            <br><h6>What is your Replacement Policy?</h6>
+            To view the Replacement Policy applicable to each product, please visit the product/combo page that you wish to purchase.
+            The product is applicable for replacement within the specified window after the delivery of the product.
+            
+            In case of replacement, the original product will be picked up. At the time of Pick up, certain products may be subjected to doorstep Quality Control Inspection. The Quality Control parameters like Same Brand, Style, Color, Size, No of pcs in the pack, Same Brand Box Packaging, Same Box packaging in No Damage condition(Resalable), No Missing accessories like laces, flower, bow, tie, etc., Security tag on garment, Used/Unused may be checked by the courier partner. If any of the parameters are not met, the Replacement request of the product may be put on hold. Please note, you can raise another Replacement request as long as the Replacement window for that product has not expired. Once the original product has been received at our Facility and the quality check has been carried out successfully, the replacement product will be shipped to you. Please note that the product should be unused, unwashed with all original tags intact and should be returned in the original packaging with a copy of the original invoice.
+            
+            If the product is not eligible for a replacement after delivery due to any eligible reasons, such as that the product is out of stock, the return pickup for the product is unavailable, or any other similar reason, you may return the product within the specified window after the delivery of the product. The refund will be processed after a successful quality check of the returned product.For more details, click on Policy.
+            
+            <br> <h6>What options do I have while making payment?</h6>
+            We accept payments by debit or credit card and also through Net Banking.
+            Credit Cards & Debit Cards - We accept VISA, MASTER, RUPAY, AMERICAN EXPRESS and DINERS Credit Cards issued in India and we accept Debit cards of all banks issued in India. International credit/debit card issues by most of the popular card's networks are also accepted.
+            Net Banking - We Accept HDFC Bank, SBI Bank, ICICI Bank, Kotak Mahindra Bank, Indian Overseas Bank, Yes Bank, Standard Chartered Bank, City Union Bank, Axis Bank. The Net Banking payment option is only available on orders above Rs. 2000.
+            You can also pay through Cash On Delivery (C-O-D) - You can also pay through Cash On Delivery (COD). In this case you pay in Cash to the courier person while accepting the goods. COD payments would be accepted for orders with total invoice value greater than equal to Rs. 99/- and up to Rs. 10,000/-.
+            
+            Cash On Delivery Charges:
+
+        </p>
+
+        
+    </fieldset>
+</div>
+
+
+
+      
+    <!-- footer -->
+    <br><br>
+    <footer class="footer">
+      <div class="container text-center">
+    
+        <div class="container d-flex justify-content-center">
+          <p class="text-muted custom-box" style="margin-bottom: 20px;">
+              Big store for little ones
+          </p>
+      </div>
+    
+        <!-- <p class="text-muted Container" style="font-size: 20px; background-color: white; border-radius: 20px; margin-bottom: 60px; width: 400px; text-align: center; margin-left: 350px; border-radius: 20px;">Big stote for litle ones</p>
+    
+      </div> -->
+      <div class="container">
+          <div class="row">
+    
+            <div class="col-md-2">
+                <h5>Categories</h5>
+                <ul class="list-unstyled">
+                    <li><a href="boys.html">Boy Fashion</a></li>
+                    <li><a href="girls.html">Girl Fashion</a></li>
+                    <li><a href="footwear.html">Footwear</a></li>
+                    <li><a href="toys.html">Toys</a></li>
+                    <li><a href="feeding.html">Feeding</a></li>
+                    <li><a href="nursery.html">Nursery</a></li>
+    
+    
+                </ul>
+            </div>
+    
+    
+    
+              <div class="col-md-2">
+                  <h5>Company Info</h5>
+                  <ul class="list-unstyled">
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="brand.html">Brands</a></li>
+                      <li><a href="faqs.html">FAQs</a></li>
+                      <li><a href="support.html">Support</a></li>
+
+                  </ul>
+              </div>
+              <div class="col-md-2">
+                  <h5>Payment Method</h5>
+                  <ul class="list-unstyled">
+                      <li><a href="#">Credit Cards</a></li>
+                      <li><a href="#">Net Banking</a></li>
+                      <li><a href="#">ATM & Debit Cards</a></li>
+                      <li><a href="#">COD(Cash on Delivery)</a></li>
+                      <li><a href="#">Easy EMI</a></li>
+    
+                  </ul>
+              </div>
+    
+    
+              <div class="col-md-2">
+                  <h5>Policies</h5>
+                  <ul class="list-unstyled">
+                      <li><a href="shipping.htm">Shipping Policy</a></li>
+                      <li><a href="terms.html">Terms of Use</a></li>
+                      <li><a href="privacy.html">Privacy Policy</a></li>
+                  </ul>
+              </div>
+    
+          
+    
+              <div class="col-md-2">
+                  <h5>Follow Us</h5>
+                  <ul class="list-unstyled">
+                      <li><a href="https://www.facebook.com/share/15yhPE3y95/">Facebook</a></li>
+                      <li><a href="https://www.instagram.com/firstcryindia?igsh=dDh5ZDdvOW5pZ3lt">Instagram</a></li>
+                      <li><a href=" https://x.com/firstcryindia?t=l0NvYS2gDRorpPiqRN6vzw&s=08">Twitter</a></li>
+                      <li><a href="https://www.linkedin.com/company/firstcry/">Linkedin</a></li>
+                      <li><a href="https://youtube.com/@firstcryparenting?si=kcEYkOYsFC_gPt0u">Youtube</a></li>
+                      <li><a href="https://www.whatsapp.com/channel/0029VaBWq863bbV6Lw3j2U19?utm_source=YouTube&utm_medium=Link&utm_campaign=YT_ParentingWAChannel">WhatsApp</a></li>
+    
+    
+    
+                  </ul>
+                 
+              </div>
+          </div>
+      </div>
+    </footer>      
+      
+
+</body>
+</html>

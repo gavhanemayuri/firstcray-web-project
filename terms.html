@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+ fieldset {
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+
+     /* nanbar first */
+     .navbar-nav {
+            display: flex;
+            align-items: center;
+        }
+        .nav-item {
+            display: flex;
+            align-items: center;
+            /* font-size: 13px; */
+        }
+        #l1:not(:last-child)::after {
+            content: " | ";
+            color: black; /* Pipe color */
+            padding: 0 4px; /* Space around the pipe */
+        }
+
+        /* second navbar */
+        /* Ensures proper spacing for navbar items */
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+       
+
+        /* Makes the navbar horizontally scrollable on small screens */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                overflow-x: auto;
+                white-space: nowrap;
+                flex-wrap: nowrap;
+            }
+            .navbar-nav {
+                flex-direction: row;
+            }
+            /* Remove pipe separator for mobile view */
+            .nav-item:not(:last-child)::after {
+                content: none;
+            }
+        }
+
+
+        /* footer */
+        .footer {
+            background-color:lightblue;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .footer a {
+            text-decoration: none;
+            color: #6c757d;
+        }
+        .footer a:hover {
+            color: #007bff;
+        }
+        footer text 
+ .custom-box {
+            font-size: 20px;
+            background-color: white;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            max-width: 90%;
+            width: 400px;
+            margin: auto;
+
+        }
+   
+    </style>
+</head>
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-light">
+        <div class="container-fluid" id="productList">
+          <form class="d-flex Container" style="width: 600px;">
+            <img src="fc_logo.png" class="img-fluid">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 300px; margin-left: 10px;">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+    
+            <!-- navbar -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                  <i class="fa fa-map-marker" style="font-size:15px"></i>  
+                                <li class="nav-item" id="l1"><a class="nav-link" href="location.html" style="color: black; font-size: medium;">select location</a></li>
+                    <li class="nav-item" id="l1"><a class="nav-link" href="login.html" style="color: black; font-size: medium;">login/register</a></li>
+                    <i class="fa-regular fa-heart"></i>
+                    <li class="nav-item" id="l1"><a class="nav-link" href="shortlist.html" style="color: black; font-size: medium;">shortlist</a></li>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <li class="nav-item" id="l1"><a class="nav-link" href="cart.html" style="color: black; font-size: medium;"></i>Cart</a></li>
+    
+                    <li class="nav-item dropdown" id="l1">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black; font-size: medium;">
+                          My Account
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="profile.html" style="font-size:medium;">My Profile</a></li>
+                            <li><a class="dropdown-item" href="shortlist.html" style="font-size:medium;">My Shortlist</a></li>
+                            <li><a class="dropdown-item" href="history.html" style="font-size:medium;">Order History</a></li>
+                            <li><a class="dropdown-item" href="logout.html" style="font-size:medium;">Logout</a></li>
+        
+        
+                        </ul>
+                    </li>
+                    
+                </ul>
+               
+            </div>
+        </div>
+    </nav>
+      
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+      <div class="container-fluid">
+          
+          <!-- Toggle Button for Mobile -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <!-- Collapsible Navbar Content -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        ALL CATEGORIES
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="boys.html">BOY FASHION</a></li>
+                          <li><a class="dropdown-item" href="girls.html">GIRL FASHION</a></li>
+                          <li><a class="dropdown-item" href="footwear.html">FOOTWEAR</a></li>
+                          <li><a class="dropdown-item" href="toys.html">TOYS</a></li>
+                          <li><a class="dropdown-item" href="feeding.html">FEEDING</a></li>
+                          <li><a class="dropdown-item" href="nursery.html">NURSERY</a></li>
+    
+    
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      </ul>
+                  </li>
+    
+                  <li class="nav-item"><a class="nav-link active" href="boys.html">BOY FASHION</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="girls.html">GIRL FASHION</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="footwear.html">FOOTWEAR</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="toys.html">TOYS</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="feeding.html">FEEDING</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="nursery.html">NURSERY</a></li>
+              </ul>
+          </div>
+      </div>
+    </nav> 
+
+    
+   <!-- policy -->
+<div class="container my-4">
+    <fieldset>
+        <div class="text-center">
+            <h1 class="fw-bold text-dark">Terms Of Use</h1>
+        </div>
+        
+        <p>
+            This document is an electronic record in terms of Information Technology Act, 2000 and rules there under as applicable and the amended provisions pertaining to electronic records in various statutes as amended by the Information Technology Act, 2000. This electronic record is generated by a computer system and does not require any physical or digital signatures.
+
+
+            Please read the following terms and conditions very carefully as your use of service is subject to your acceptance of and compliance with the following terms and conditions.
+            
+            Note: Please be informed that Firstcry will never contact you for cash prizes or deposit money for photoshoot or franchise or distributorship or request a password, PIN or CVV etc. Please refrain from sharing such sensitive information with anyone, as it could lead to fraudulent transactions. Further, please be vigilant against fraudulent sites, social media pages, fake offers, SMS, email, whatsapp messages, or any other suspicious communication claiming to be from Firstcry. Also, in order to open a store or pre-school, please use the dedicated link provided on our website (www.firstcry.com) to submit your enquiry to us. In case of any query or to report any suspicious activity which you may come across, kindly visit our Contact Us section.
+
+        </p>
+        <h2>CONTENTS</h2>
+        <ol type="1">
+            <li> General Information</li>
+            <li>Account and Registration</li>
+            <li>Pricing, Promotions & Coupon Codes</li>
+            <li>Third Party Offers</li>
+            <li>Transactions & Cancellation</li>
+            <li>Guidelines for Writing Product Reviews</li>
+            <li>User Conduct</li>
+            <li>Shop 'n' Earn Club Cash</li>
+            <li>Guaranteed Savings Program</li>
+            <li>Parenting Services</li>
+            <li>FitJunior Program</li>
+            <li>Other Terms</li>
+            <li>FirstCry Account Deletion</li>
+            <li>Grievance Functionary</li>
+        </ol>
+
+
+            <h1>General Information</h1>
+            he domain name www.firstcry.com including www.firstcry.com's Parenting services (hereinafter referred to as "Parenting") available through www.firstcry.com's mobile app ( hereinafter referred to as “Site” or “Website” or “Firstcry.com”) is registered in the name of BrainBees Solutions Limited a company incorporated under the Companies Act, 1956 (Hereinafter referred to as BB).
+Digital Age Retail Private Limited, a company incorporated under Companies Act, 1956 holds a valid license, granted by BrainBees Solutions Limited, to use and operate the Website for its online retail business (Hereinafter referred to as DARP).
+Your use of the Website and services and tools are governed by the following terms and conditions ("Terms of Use") as applicable to the Website. If you transact on the Website, You shall be subject to the policies that are applicable to the Website for such transaction. By mere use of the Website, You shall be contracting with DARP, these terms and conditions constitute your binding obligations, with BB and DARP.
+For the purpose of these Terms of Use, wherever the context so requires "You" or "User" shall mean any natural or legal person who has agreed to become a member of the Website by providing Registration Data while registering on the Website as Registered User using the computer systems. DARP allows User to surf the Website or making purchases without registering on the Website. The term "we", "us", "our" shall mean DARP or BB or firstCry.com or all.
+ACCESSING, BROWSING OR OTHERWISE USING THE SITE INDICATES YOUR AGREEMENT TO ALL THE TERMS AND CONDITIONS IN THIS AGREEMENT, SO PLEASE READ THIS AGREEMENT CAREFULLY BEFORE PROCEEDING.
+
+All products/services and information displayed on FirstCry.com constitute an "invitation to offer". Your order for purchase constitutes your "offer" which shall be subject to the terms and conditions as listed below. FirstCry.com reserves the right to accept or reject your offer. If you have supplied us with your valid email address, we will notify you by email as soon as possible to confirm receipt of your order and email you again to confirm details and therefore process the order. Our acceptance of your order will take place upon dispatch of the product(s) ordered. No act or omission of FirstCry.com prior to the actual dispatch of the product(s) ordered will constitute acceptance of your offer.
+
+<h4>Membership Eligibility</h4>
+Use of the Site is available only to persons who can form legally binding contracts under applicable law. Persons who are "incompetent to contract" within the meaning of the Indian Contract Act, 1872 including un-discharged insolvents etc. are not eligible to use the Site. You may use this site only if your age is over 18 years.
+FirstCry.com reserves the right to terminate your membership and refuse to provide you with access to the Site if FirstCry.com discovers that you are under the age of 18 years. In case of a business entity, you represent that you have the necessary authority to bind the entity to this User Agreement. Unless otherwise specified, the materials on this website are directed solely at those who access this website from India. FirstCry.com makes no representation that any products or services referred to in the materials on this website are appropriate for use, or available outside India. Those who choose to access this Site from outside India are responsible for compliance with local laws if and to the extent local laws are applicable. FirstCry.com will deliver the products only within India and will not be liable for any claims relating to any products ordered from outside India.
+Unless otherwise stated as additional terms and conditions which are product specific, these terms and conditions supersede all previous representations, understandings, or agreements and shall prevail notwithstanding any variance with any other terms of any order submitted. By using the services of FirstCry.com you agree to be bound by the Terms and Conditions.
+
+<h4>Modifications</h4>
+FirstCry.com reserves the right at all times to discontinue or modify the Terms of Use and/or our Privacy Policy as we deem necessary or desirable without any prior notification. Such changes may include, among other things, the adding of certain fees and charges. Any such modifications would be effective immediately. We suggest that you read our Terms and Conditions and Privacy policy from time to time to stay informed. Any use of the site after such modifications would be deemed to constitute acceptance of the modified terms by the End User.
+
+<h4>Account and Registration</h4>
+It is the user's responsibility to keep the details of the account and password confidential and you agree to accept responsibility for all activities that occur under Your Account or Password. FirstCry.com shall not be liable to any person for any loss or damage which may arise as a result of any failure by the user to protect the account details or the password. In case of any suspected breach please contact us immediately. If FirstCry.com has reason to believe that there is likely to be a breach of security or misuse of the FirstCry.com Site, we may require you to change your password or we may suspend your account without any liability to FirstCry.com.
+You also agree to:<br><br>
+1. Provide true, accurate, current and complete information about yourself as prompted by FirstCry website during the registration process (such information being the "Registration Data")
+<br>2. Maintain and promptly update the Registration Data to keep it true, accurate, current and complete. If you provide any information that is untrue, inaccurate, incomplete, or not current or if FirstCry.com has reasonable grounds to suspect that such information is untrue, inaccurate, not current or not in accordance with the User Agreement, FirstCry.com will have the right to indefinitely suspend or terminate your membership and refuse to provide you with access to the Site.
+<br>3.Customers registered through international phone numbers can not avail Club benefits at the FirstCry.com Stores.
+<br>4.Customers registered through international phone numbers can get only an Online discount i.e at the website or app
+<br>5.Any changes in the offer and discount policy will be solely the company’s decision & the company has the right to modify/remove/put it on hold anytime as it deems fit.
+
+<h4>Pricing, Promotions & Coupon Codes</h4>
+<h4>Pricing Information</h4>
+While FirstCry.com shall endeavor to provide accurate product and pricing information, typographical errors might occur. FirstCry.com cannot confirm the price of a product until after you order. In the event that a product is listed at an incorrect price or with incorrect information due to an error in pricing or product information, FirstCry.com reserves the right, at its sole discretion, to refuse or cancel orders at any stage prior to delivery. If any fraudulent activity is detected, FirstCry.com may recover its dues from the user's successive orders. If an item is mis-priced, FirstCry.com may, at its discretion, either contact you for instructions or cancel your order and notify you of such cancellation. Unless the product ordered by you has been dispatched, your offer will not be deemed accepted, and FirstCry.com reserves the right to modify the price of the product and contact you for further instructions using the email address provided during registration, or cancel the order and notify you of such cancellation. If FirstCry.com accepts your order, the amount will be debited to your credit card account and you will be notified by email that the payment has been processed. The payment may be processed before FirstCry.com dispatches the product. If we have to cancel the order after processing the payment, the amount will be reversed back to your credit card account.
+
+Prices of products at the FirstCry store and on FirstCry.com (site and apps) may differ.
+
+
+<h4>Applicability of GST</h4>
+All discount coupons and/or cashback offers include an applicable component of GST benefits being passed on to customers.
+
+The following rules will govern whether GST will be applicable on discounted products purchased by you:
+<br>1. The quantum of GST to be borne over and above the discounted price depends on the category and the prevailing discount on those products.
+<br>2. GST applicability:
+Discount less than 19%
+In the case of a product with a discount of less than 19%, the full applicable GST shall be borne by the company.
+Discount 19% and above
+<br>1. For products with GST of 5% or 12%, GST shall be paid by the customer over and above the discounted price.
+<br>2. For products with GST of 18% and above, 50% of the applicable GST shall be charged to the customer over and above the discounted price.
+
+
+
+
+<h4>GST Benefits</h4>
+All discount coupons and/or cashback offers include an applicable component of GST benefits being passed on to customers.
+
+Promotion Offers
+In the case of returned or undelivered orders, whether in part or in full, the user will not be eligible to avail the offer that was used to purchase the original order. The refund provided will not include the benefits of the offer. If the returned product(s) were part of a free offer, such as "Buy 2 get 1 free" or "Buy 1 get 1 free," all products related to the offer must be returned as they were purchased as part of a group offer. The refund/replacement process will only be initiated once all the products from the offer have been returned.
+
+Occasionally, we may include a free sample or gift with our orders that are eligible for the offer. Please note that these samples/gifts are not eligible for return, replacement, or refund under any circumstances.
+
+<br>1. Free Gifts are subject to meeting the offer criteria after applying any coupons and before GST.
+
+<br>2. All Offers related to Free Gifts are available until stocks last.
+
+<h4>Coupon Codes & Cart Offers</h4>
+To offer special discounts to our users from time to time, we share coupon codes based discounts. To prevent any possible misuses we have put in place a few checks on the ways in which these coupon codes can be used.
+To make the best use of the coupon code offers, please go through the following terms and conditions applicable on all coupon codes
+
+<br>1. Coupon Codes & Cart Offers based offer will be valid upon application of the coupon code at the time of placing order.
+
+<br>2. Coupon Codes & Cart Offers will be valid till the date communicated or till stocks last on the applicable products, whichever happens earlier.
+
+<br>3. Coupon Codes & Cart Offers will not be valid on Diapers, Combos, Women’s Hygiene, Formula and Supplements, Beverages and Juices, Bottles & Accessories and on the brands Duracell, Johnson's baby, Luxor, Nataraj, Nestle, Pidilite, Protinex, Milton, Pond's, Garnier, Neutrogena, OK Baby, Vaseline, Dove, Mothercare, Sunsilk, Pears, Lux, TRESemme, Tommy Hilfiger, Bella, Sofy, Stayfree, Fabindia, PediaSure, Sony, dreambaby, Campus, Aveeno, Tango, Dabur, West Coast, Motorola, Step2, Melissa & Doug, Crocs, Horlicks, Liril, Nintendo, Clinic Plus, Skiphop, YONEX, Simple, Beaba, DMR MiniWash, Skip Hop, Krysaliis, Foscam, Ergobaby, Cybex, Bioderma, Abena, Totum, Hamdard, Alex Daisy, Complan, Lilpicks Couture, Liz Jacob, Pilot, Jane, Little Looms, Masilo, Plum Toys, Fancy Fluff, Sophie la Girafe, Hoopa, Springfree, Slurrp Farm, Dettol, GETBEST, UBBI, Okbaby, THREPTIN, SHESHA NATURALS, Dermadew, Emotix, Bambo Nature, Dermavive, Skillmatics, TigerTech, Brainsmith, Doms, Vaux, Hawkins, Joie, Forever Kids, LC Waikiki, RYCA, Pureborn, Red Castle, Sleepyhead, U.S. Polo Assn., The Brushies, Stokke, Avidia Labs, KIRTI AGARWAL PRET N COUTURE, Osasbazaar, goDiscover, Wildcraft, JOCKEY, Monte Carlo, Karigari, Volwco, Nooie, Savlon, VWash Plus, StarAndDaisy, Boingg, Instax Fujifilm, Trakbond, ClassMonitor, Yamaha, Birkenstock, Luv Lap, Fisher Price by Tiffany, Duroflex, Shnuggle, NumNum, Skypearll, Indulekha, Lever Ayush, Love Beauty & Planet, THINKER PLACE, ezpz, Aigner, Manyavar, Bella Vita Organic, Motherly, uni-ball, Pentonic, Garmin, Cello Wimplast, Nestasia, Kidsville, X&Y, Noise, Anthrilo, Minimalist, Fevicol MR, Fevicryl, Fevikwik, Fevistik, Rangeela, Lycka, LINC, AVRO FURNITURE, Neutriderm, SUNSTOP, Ariro, Eloish, SUPERHERO TOYSTORE, Blessbe, Furtados, Starplast, Tiason, Molo, mini rodini, BUGATTI, BOY LONDON, Soulslings, iDO, Kadence, eco rascals, ODI Jewels, Foreverkidz, Nac Jewelers, Kirti Agarwal, BYB Premium, Omie, Bapron Baby, Pixie Threads, The Right Cut, RAR Studio, PASHA INDIA, Toodles, Casa Ninos, Vidushi Astha, Fayon Kids, Candere by Kalyan Jewellers, Toddlekind, Cheeky Chompers, BIBS World, Snuz, OBORI, Ka Kids, Partykles, Bibbity Bobbity, Forest Essentials, MEKASHI, Swoon Baby, Minime Organics, The Tribe Kids, Butt Baby unless otherwise mentioned.
+
+<br>4. A Coupon Codes & Cart Offers can be used only once per user per household unless otherwise mentioned.
+
+<br>5. A Coupon Codes & Cart Offers cannot be clubbed with any other coupon code or with any other offer including offers running on the site without using coupons.
+
+<br>6. A coupon will provide the stated discount of the coupon code or the discount already stated on the product whichever is higher unless otherwise mentioned.
+
+<br>7. Coupon codes shared individually with a user will be applicable on purchase made by that particular user only.
+
+<br>8. The website reserves the right to change the terms and conditions of any coupon code any time without prior intimation.
+
+<br>9. Shipping / Cash on delivery rules and charges apply on the net amount payable upon application of the coupon code unless otherwise mentioned.
+
+<br>10. Cashback coupons are valid for next purchase as per the conditions mentioned with the Cashback offer.
+
+<br>11. The Cash Coupons added to an account can be changed/updated at any point of time by Brainbees Solutions Ltd. without any prior intimation. These changes could be made from time to time even before the valid expiry date of the existing Cash Coupons.
+
+<br>12. Redemption of any Offers, Coupon code, cashback code, gift certificate shall be subject to applicability at the FirstCry.com stores. In order to ensure applicability of any offer at the Firstcry.com store, the Customer shall furnish the offer/code details with the store personnel before making the purchase at the store.
+
+<br>13. Offer valid only on the listed Sizes & Colours of the products featured on the page.
+
+ <h4>Cashback Offers</h4>
+Cashback Offers are run from time to time to award users for their purchase from FirstCry.com. The terms and conditions applicable with these Cashback offers are as below
+<br>. The Cashback amount, the purchase conditions and the product range on which the Cashback offer is valid will be as specified along with the Cashback offer
+
+<br>. The Cashback amount will be received by the user as a coupon through a Cashback email. The Cashback coupon would be received by you up to 10 days after the delivery of the order. Eg: If your order has been delivered on 3rd September, you would be receiving the Cashback coupon on mail latest by 13th September.
+
+<br>. Cashback will not be earned on purchases from the categories Bottles & Accessories, Formula & Supplements or on purchasing any of the Guaranteed Savings Offer codes. They will only be earned on the products mentioned in the cashback promotions.
+
+<br>. Cashback will not be provided for any product(s) which have either not been delivered to you or which has been returned by you. In the event of any replacement provided to you, the replacement product value will not be added to the cashback calculations available to you to redeem on site.
+
+<br>. Redemption of the Cashback coupon will not be applicable on Baby Diapers, Formula & Supplements, Bottles & Accessories, World Food, Super Savers and Gift Packs categories as well as on the brands on Duracell, Johnson's baby, Luxor, Nataraj, Nestle, Pidilite, Protinex, Milton, Pond's, Garnier, Neutrogena, OK Baby, Vaseline, Dove, Mothercare, Sunsilk, Pears, Lux, TRESemme, Tommy Hilfiger, Bella, Sofy, Stayfree, Fabindia, PediaSure, Sony, dreambaby, Campus, Aveeno, Tango, Dabur, West Coast, Motorola, Step2, Melissa & Doug, Crocs, Horlicks, Liril, Nintendo, Clinic Plus, Skiphop, YONEX, Simple, Beaba, DMR MiniWash, Skip Hop, Krysaliis, Foscam, Ergobaby, Cybex, Bioderma, Abena, Totum, Hamdard, Alex Daisy, Complan, Lilpicks Couture, Liz Jacob, Pilot, Jane, Little Looms, Masilo, Plum Toys, Fancy Fluff, Sophie la Girafe, Hoopa, Springfree, Slurrp Farm, Dettol, GETBEST, UBBI, Okbaby, THREPTIN, SHESHA NATURALS, Dermadew, Emotix, Bambo Nature, Dermavive, Skillmatics, TigerTech, Brainsmith, Doms, Vaux, Hawkins, Joie, Forever Kids, LC Waikiki, RYCA, Pureborn, Red Castle, Sleepyhead, U.S. Polo Assn., The Brushies, Stokke, Avidia Labs, KIRTI AGARWAL PRET N COUTURE, Osasbazaar, goDiscover, Wildcraft, JOCKEY, Monte Carlo, Karigari, Volwco, Nooie, Savlon, VWash Plus, StarAndDaisy, Boingg, Instax Fujifilm, Trakbond, ClassMonitor, Yamaha, Birkenstock, Luv Lap, Fisher Price by Tiffany, Duroflex, Shnuggle, NumNum, Skypearll, Indulekha, Lever Ayush, Love Beauty & Planet, THINKER PLACE, ezpz, Aigner, Manyavar, Bella Vita Organic, Motherly, uni-ball, Pentonic, Garmin, Cello Wimplast, Nestasia, Kidsville, X&Y, Noise, Anthrilo, Minimalist, Fevicol MR, Fevicryl, Fevikwik, Fevistik, Rangeela, Lycka, LINC, AVRO FURNITURE, Neutriderm, SUNSTOP, Ariro, Eloish, SUPERHERO TOYSTORE, Blessbe, Furtados, Starplast, Tiason, Molo, mini rodini, BUGATTI, BOY LONDON, Soulslings, iDO, Kadence, eco rascals, ODI Jewels, Foreverkidz, Nac Jewelers, Kirti Agarwal, BYB Premium, Omie, Bapron Baby, Pixie Threads, The Right Cut, RAR Studio, PASHA INDIA, Toodles, Casa Ninos, Vidushi Astha, Fayon Kids, Candere by Kalyan Jewellers, Toddlekind, Cheeky Chompers, BIBS World, Snuz, OBORI, Ka Kids, Partykles, Bibbity Bobbity, Forest Essentials, MEKASHI, Swoon Baby, Minime Organics, The Tribe Kids, Butt Baby unless otherwise mentioned.
+
+<br>. The maximum Cashback given out is Rs. 250 and is applicable on the MRP of the product, unless mentioned otherwise
+
+<br>. The Cashback coupon can be used till the date of validity as specified in the Cashback email
+
+<br>. The company reserves the right to change the terms and conditions of the Cashback offers without prior intimation
+
+<br>. The Cashback is not applicable on cancelled orders
+
+
+<h4>Forest Essentials Free Gift Offer</h4>
+<br>1- Free Gift Offer from Forest Essentials is available on all Order of Forest Essentials.
+
+<br>2- No Minimum order value required
+
+<br>3- Offer Valid till Stocks Last
+
+<br>4- The Free gift will be added automatically to the cart
+
+<br>5- No need to apply any coupon to avail this offer
+
+<br>6- If another coupon is applied, the free gift will be removed from cart
+
+<h4> Gift Certificate</h4>
+The terms and conditions applicable for Gift Certficate are as below
+<br>. Gift certificate Delivered via email.
+
+<br>. The Gift Certificate can be used against your purchase on FirstCry.com.
+
+<br>. Customers must open a free account at FirstCry.com to redeem his or her gift certificate.
+
+<br>. Every gift certificate has a unique code. To redeem the gift certificate, enter this code in your shopping cart.
+
+<br>. Multiple Gift Certificates can not be be applied to a single order.
+
+<br>. Both a gift certificate and credit card may be used to pay for your order. If both are used, we will charge the gift card first and the remaining balance will be charged to your credit card.
+
+<br>. Unused gift certificates may not be redeemed for cash.
+
+<br>. Gift certificates are not replaceable if lost or stolen.
+
+<br>. Gift certificates value can be redeemed in multiple purchases.
+
+<br>. Gift certificates may only be redeemed for orders shipped in India.
+
+<br>. Gift certificates may only be redeemed through Recipient's Email Address
+
+<br>. Gift Certificate cannot be purchased through Cheque/Cash on Delivery/Club Cash
+
+
+
+<h4>Gift Wrapping</h4>
+<br>. Gift wrap option is available only on selected products. You can choose to gift wrap the selected products in your order by selecting "ADD GIFT WRAP@ Rs. 30" in "CheckOut Cart" tab at the time of checkout. The gift wrap will also include a personalized message.
+
+<br>. The external Gift Packaging will not include any pricing, discount or payment information. However, the original product tag with the MRP will be intact on the products inside the package.
+
+<br>. Discounts and Coupons are not applicable on the gift wrap charge.
+
+<br>. Please note that in case you return your order, the gift wrap charges will not be credited back.
+
+
+
+<h4>Third Party Offers</h4>
+FirstCry Campaign for J&K Bank Mastercard Debit and Credit Card
+December 2024
+
+<h4>Campaign Construct:<br>
+    Offer construct:</h4>
+
+    <br>1. 15% Instant Discount on Debit Card Upto Rs. 600; Minimum Order Value : INR 1499
+
+    <br>2. 15% Instant Discount on Credit Card Upto Rs. 600; Minimum Order Value : INR 1499
+
+    <br>3. Offer is valid once per card during the offer period.
+
+<h4>Target Customers:</h4>
+The campaign is open to all J&K Bank Mastercard debit and credit cardholders with the Debit BINs 515875, 515228, 554359, 548594, 557921, 546800 and Credit BIN 531453.
+
+<h4>Campaign Period:</h4>
+Dates for the campaign- 5th December 2024 to 3rd January 2025 (tentative)
+
+<h4>Terms and Conditions:</h4>
+<br>1. This offer is applicable only on transactions using J&K Bank Mastercard Debit & Credit Cards with the Debit BINs 515875, 515228, 554359, 548594, 557921, 546800 and Credit BIN 531453.
+
+<br>2. Maximum Discount is ₹600 per transaction.
+
+<br>3. Total value of items must be ₹1499 or more.
+
+<br>4. Offer can be availed once per card during the offer period (Dec 5 – Jan 3).
+
+<br>5. Discount not applicable on digital purchases such as club memberships, gift codes.
+
+<br>6. Offer is applicable on Firstcry.com & Mobile App only. It is not applicable in offline stores.
+
+<br>7. The offer will be applicable once per card.
+
+<br>8. FirstCry reserves the right to pause the campaign if the approved budget is exhausted.
+
+<br>9. As required, J&K Bank and Mastercard may choose to extend the promotion period or pause the campaign earlier.
+
+<br>10. Participation in the Campaign by the Customer(s) is on a voluntary basis.
+
+<br>11. In all matters relating to the campaign, the decision of J&K Bank and Mastercard shall be final and binding in all respects.
+
+<br>12. J&K Bank and Mastercard shall not in any way be deemed to be making any representation whatsoever about the usefulness, worthiness, quality and/or character of the Reward Incentive provided under the Campaign and shall not be responsible in any way whatsoever for the same. The existence of a dispute with respect to, if any, regarding the usefulness, worthiness, nature and/or quality of Product or other Services provided by J&K Bank and Mastercard shall not constitute a claim against the Bank.
+
+<br>13. Any tax or other liabilities or charges payable to the government or any other statutory authority/body or any participating establishment, which may arise or accrue to the Customers due to provision of the Offer, shall be to the sole account of Customer/s. Tax deducted at source, if any, on the Monetary value of the Offer shall be payable by Customer/s.
+
+<br>14. J&K Bank and Mastercard shall not be liable in any manner whatsoever for any loss/damage/claim that may arise out of use or otherwise of any Products or Services availed by the Customer/s under this campaign.
+
+<br>15. J&K Bank and Mastercard reserves the right to disqualify the Customer/s from the benefits of the Offer if any fraudulent activity is identified as being carried out for the purpose of availing the benefits under the Campaign.
+
+<br>16. J&K Bank and Mastercard shall not be held liable for any delay or loss that may be caused in delivery of the Product/Services.
+
+<br>17. If the Customer ceases to be a Customer at any time during the currency of the Campaign Period, all the benefits under the Offer shall lapse and shall not be available to the Customer.
+
+<br>18. The Campaign cannot be clubbed with any offer(s) or promotion(s). J&K Bank and Mastercard have the right to withdraw the Campaign without any prior notice.
+
+<br>19. J&K Bank and Mastercard reserves the right to modify/change all or any of the terms and conditions contained herein as per its discretion without assigning any reasons or without any prior intimation/notice whatsoever. J&K Bank and Mastercard also reserves the right to discontinue the Campaign without assigning any reasons or without any prior intimation whatsoever. J&K Bank and Mastercard will not be liable in any manner whatsoever for any loss/damage/claim/injury that may arise due to withdrawal or change in the terms and conditions of the Campaign or discontinuation of it.
+
+<br>20. The offer under the campaign is subject to applicable Indian laws and such other terms and conditions as may be stipulated by J&K Bank and Mastercard. The Offer is not available wherever the same is prohibited and/or cannot be offered or for any reason whatsoever.
+
+<br>21. By participating in the Campaign, each Participant fully and unconditionally agrees to these terms and conditions and accepts that the decision of J&K Bank and Mastercard regarding the Campaign and all matters related to or connected with it, including, without limitation, the interpretation of these terms and conditions, is final and binding and no queries shall be entertained. In the event all or any of these terms and conditions are not acceptable to a Participant, such Participant should not participate in the Campaign, notwithstanding the offer. These terms and conditions shall be binding on the Participants.
+
+<br>22. No representation or warranty of any kind is given by Mastercard as to the rewards offered under the Campaign and all liability of any kind whatsoever is excluded to the full extent permissible by applicable law. In the event legislation mandates conditions or warranties which cannot be excluded, restricted, or modified except to a limited extent, then to the extent permitted by law, and Mastercard liability is limited to, at its option to provide replacement of the reward or any component or item thereof or the supply of an equivalent prize.
+
+<br>23. For all risks associated with the use and redemption of the rewards, Mastercard and their respective directors, officers, employees and agents shall not be liable to the winners or their companions (if any) under the Campaign or any other person for any deficiency, delay, omission or failure related to or connected with Campaign or the Prizes or any component or item thereof.
+
+<br>24. To the full extent permitted by applicable law, each Participant shall not have any claim whatsoever against any member of Mastercard and their respective directors, officers, employees and agents in respect of any action, proceeding, judgment, damage or loss (including, without limitation, incidental, punitive, consequential, special, direct or indirect damages, loss of profits, loss of business, loss of business opportunity or economic loss), expense, injury (including, without limitation, death or personal injury), damage to property or liability suffered or incurred by the Participant (including any companion of the winner) or any other person arising from or in connection with:
+
+<br>(a) such Participant’s participation in the Campaign;
+
+<br>(b) collection, receipt, redemption, use or misuse of any rewards or any component or item thereof by such Participant and/or any other person;
+
+<br>25. Each Participant shall indemnify and hold the Mastercard and their respective directors, officers, employees and agents harmless from and against any and all claims (including, without limitation, claims for negligence), liabilities, suits, damages, judgments, costs and expenses (including, without limitation, attorney’s fees) and all losses and expenses resulting or arising from or connected with any claims or actions by any third parties against Mastercard or any entity therein or their respective directors, officers, employees and agents due to any default, act, omission or negligence of such Participant, including, without limitation, default in complying with these terms and conditions or any violation of any applicable law, rules and regulations by such Participant.
+
+<br>26. Mastercard and their respective directors, officers, employees and agents shall not, to the full extent permissible by applicable law, be liable in any way whatsoever in respect of any of the following:
+
+<br>(a) lost, late, misdirected, intercepted, undelivered, rejected, blocked or deleted entries, notifications, postings, correspondences or transaction postings;
+
+<br>(b) any reward or any component or item thereof that is damaged, defaced, illegible, lost, stolen or otherwise not used;
+
+<br>(c) inaccurate information provided by the Participant, howsoever caused;
+
+<br>(d) the suspension, cancellation or termination of the Campaign for any reason whatsoever;
+
+<br>(e) virus or other corruption, technical or mechanical error or failure, human error, negligence or unauthorized human intervention in any part of the entry process, the winners’ selection or determination process, or the operation or administration of the Campaign;
+
+<br>(f) technical or mechanical errors related to computers, servers, mobile phones, satellites, telephone lines, network lines or any other equipment;
+
+<br>(g) any action, proceeding, judgment, liability, loss, injury, claim or damage (including, but not limited to, incidental, punitive, consequential, special, direct or indirect damages or losses, loss of profits, loss of business, loss of business opportunity, economic loss), expense, death and personal injury incurred or suffered by any Participant or any other person which may be caused, directly or indirectly, in whole or in part, from (i) any participation in the Campaign; (ii) the collection, receipt, redemption, use or misuse of any reward or any component or item thereof; or (iii) the travel to and from any venues or locations associated with any reward or any component or item thereof.
+
+<br>27. Mastercard accepts no responsibility for any tax implications that may arise from any reward or any component or item thereof or the claiming, redemption and use thereof. Any tax filing obligation or any tax, rates, or fee payment due to any authority as a result of the participation in the Campaign by a Participant or the collection, redemption, receipt or use of any reward or any component or item thereof remains the sole responsibility of the winner thereof. It is the responsibility of each winner to seek independent advice on the possible implications this may have on his/her own financial situation.
+
+<br>28. The Campaign is subject to all applicable laws and regulations. In the event J&K Bank and Mastercard are prevented from continuing with the Campaign or the integrity and/or feasibility of the Campaign is undermined by any event beyond the control of J&K Bank and Mastercard, including, but not limited to, fire, flood, epidemic, earthquake, explosion, labour dispute or strike, act of God or public enemy, satellite or equipment failure, riot or civil disturbance, war (declared or undeclared), terrorist threat or activity, or any federal, state or local government law, order, or regulation, order of any court or jurisdiction, infection by computer virus, unauthorized intervention, breakdown in equipment, technical failures or other cause not reasonably within the control of Mastercard, J&K Bank and Mastercard shall have the right, in its sole and absolute discretion, to abbreviate, modify, suspend, cancel or terminate the Campaign without any further obligation.
+
+Punjab National Bank Credit Card Instant Discount Offer
+This marketing program (“Program”) is from Punjab National Bank Credit Cards under an arrangement with Digital Age Retail Pvt Ltd., (“Merchant”) and is open to all residents of India holding a valid and current Punjab National Bank Credit Cards (“Cardholder”)
+
+<h4>Under this program:<br>
+    Offer Details:</h4>
+
+    <br>1. 20% Instant Discount*
+
+    <br>2. Minimum Transaction Value - Rs. 1999
+
+    <br>3. Maximum Discount - Rs. 600
+
+    <br>4. Applicable on - Punjab National Bank Credit Cards
+
+    <br>5. Offer Dates: 7th November to 30th November, 2024
+
+    <br>6. Once per card per month.
+
+<h4>Terms and Conditions:</h4>
+<br>1. Program is applicable only to transactions done during the campaign period & will not be applicable on any other day.
+
+<br>2. Offer is not applicable on subscription purchases (example: Club Membership Program) .
+
+<br>3. All the existing offers, gifts, Instant Discounts etc. offered on Firstcry.com can be used by the Cardholders apart from this exclusive offer as mentioned in the communication.
+
+<br>4. Offer is not applicable on the purchase of Digital Products and Gift Certificate.
+
+<br>5. FirstCry & Punjab National Bank Credit Cards reserve right to modify or end the offer during the campaign period
+
+<br>6. Offer is valid only on FirstCry Online platform and not valid at Retail Stores.
+
+<br>Note: - FirstCry is a participating entity as per the commercial between Punjab National Bank Credit Cards and Digital Age Retail Pvt Ltd.
+
+Terms and Conditions for FirstCry Festive Campaign on Axis Bank Credit Cards
+Offer Period – 00:00 hours on 12th Oct 2024 to 23:59 hours on 28th Oct 2024
+
+<h4>Offer details -</h4>
+
+<br>1. 5% Instant Discount up to Rs. 500 on Minimum order value of Rs. 2500
+<br>2. The Offer can be availed once per card during the Offer Period.
+<br>3. The offer is applicable on Firstcry.com and & Mobile App only.
+Card applicability – All retail Credit cards.
+
+<h4>Axis Bank Standard Terms and Conditions</h4>
+
+<br>1. The decision of The Merchant & Axis Bank will be final and binding on all and any correspondence in this regard will not be entertained.
+<br>2. The offer is not transferable, non-negotiable and cannot be En-cashed.
+<br>3. Incomplete / rejected / invalid / returned / disputed or unauthorized/fraudulent transactions will not be considered for the offer.
+<br>4. In case there is more than one offer available simultaneously, no two offers can be combined by the participant. It shall be entirely at discretion of Axis Bank to consider any exceptions to the above.
+<br>5. Axis Bank will not be responsible or liable in case the offer is not configured or could not be availed due to malfunction, delay, traffic congestion on any telephone network or line, computer on-line system, servers or providers, computer equipment, software, or website.
+<br>6. The Merchant and Axis Bank reserve the right at any time, without notice, to add/alter/change or vary any or all of these terms and conditions or to replace, in whole or in part, this offer by another offer, whether similar to this offer or not, or to withdraw it altogether.
+<br>7. The participation in the offer is entirely voluntary and it is understood that the participation by the Cardholders shall be deemed to have been made on a voluntary basis.
+<br>8. The Merchant & Axis Bank reserve the right to modify/alter the offer or all or any of the terms applicable to the offer without assigning any reasons or without any prior intimation whatsoever. Axis Bank also reserves the right to discontinue the offer without assigning any reasons or without any prior intimation whatsoever.
+<br>9. In case of all matters relating to the offer including any dispute or discrepancy relating to the offer or eligibility of any Cardholder, Axis Bank’s decision shall be final and binding on Cardholders in all respects.
+<br>10. Axis Bank only offers discount on purchase of goods and services of The Merchant by using Axis Bank Credit & Debit Card and Axis Bank holds out no warranty or makes no representation about the quality, delivery or otherwise of the goods and services offered/sold by The Merchant. Any dispute or claim regarding the goods and/or services must be resolved by the Cardholder with The Merchant directly without any reference to Axis Bank. Additional discount offered by the Bank is solely for promoting usage of Axis Bank Debit and Credit card.
+<br>11. Images provided in promotions are only for pictorial representation and Axis Bank does not undertake any liability or responsibility for the same.
+<br>12. Nothing contained herein shall constitute or be deemed to constitute advice, invitation or solicitation to purchase any products/services of The Merchant or any third party and is not intended to create any rights and obligations.
+<br>13. The offer by Axis Bank is subject to applicable laws and regulatory guidelines/regulations and as per bank's extant guidelines from time to time.
+<br>14. Bank may use the services of agents for sales/marketing of the products. Copyrights of Axis Bank Limited. All rights are reserved.
+<br>15. Axis Bank shall not be liable in any manner whatsoever for any loss/damage/claim that may arise out of use or otherwise of any goods/services availed of by the Card Holder/s under the offer.
+<br>16. Axis Bank shall not be held liable for any delay or loss that may be caused in delivery of the goods and/or services under the offer.
+<br>17. The Merchant & Axis Bank retain the right to change or discontinue the Offer at any time during the Promotion Period. The decision of The Merchant & Axis Bank with respect to the Offer shall be final and binding on the customer and any correspondence in this regard will not be entertained.
+<br>18. The Merchant & Axis Bank reserve the right to disqualify any cardholder from the benefits of the offer if any fraudulent activity is identified as being carried out for the purpose of availing the benefits under the offer or otherwise by use of the Card.
+<br>19. All taxes, duties, levies or other statutory dues and charges payable in connection with the benefits accruing under the offer shall be borne solely by the cardholder and Axis Bank will not be liable in any manner whatsoever for any such taxes, duties, levies or other statutory dues.
+<br>20. The terms and conditions governing the offer shall be in addition to and not in substitution/derogation to the Primary Terms and Conditions governing the Credit Card/Debit Card issued by Axis Bank.
+<br>21. Axis Bank shall not be obliged to make any public announcements to intimate the successful Cardholders about the discount under the offer.
+<br>22. The offer is not available wherever prohibited and for products/services for which such programs cannot be offered for any reason whatsoever.
+<br>23. Logos/trademarks used are owned by respective entities. Axis Bank has been authorized to use these logos/trademarks for offer promotion purposes.
+<br>24. Any person taking advantage of this offer shall be deemed to have read, understood and accepted these terms and conditions.
+<br>25. Any dispute relating to the offer or the terms and conditions shall be subject to the jurisdiction of the courts in Mumbai only.
+<br>26. Merchant Terms & Conditions applicable.
+Terms & Conditions - AU Bank Credit Card Offer
+This marketing program (“Program”) is from AU Bank Credit Cards under an arrangement with Digital Age Retail Pvt Ltd., (“Merchant”) and is open to all residents of India holding a valid and current AU Bank Credit Card (“Cardholder”).
+
+<h4>Under this program:</h4>
+AU Bank Credit Card Instant Discount Offer*
+
+<br>1. For Normal Non-EMI Transactions:
+
+10% Instant Discount*
+Minimum Transaction: Rs 2,000
+Maximum Instant Discount: Up to Rs 500
+Applicable on: AU Credit Card
+<br>
+Offer Dates: August 2024 – 3rd, 4th, 10th, 11th, 17th, 18th, 24th, 25th, 31st
+<br>
+Frequency: Once per card per month. Maximum 1 transaction on a card will be eligible; any further transactions using the same card will not get the benefit of the offer.
+<br>
+<h4>Program Terms:</h4>
+Program is applicable only to transactions done during the campaign period and will not be applicable on any other day.
+Offer is not applicable on subscription purchases (e.g., Club Membership Program).
+AU Credit Card Account is required to be active and non-delinquent. Returned transactions, disputed, or unauthorized/fraudulent transactions will not be considered for this offer.
+All existing offers, gifts, Instant Discounts, etc., offered on Firstcry.com can be used by the Cardholders apart from this exclusive offer as mentioned in the communication.
+Offer is valid only on FirstCry Online platform and not valid at Retail Stores.
+Under no circumstances will the offer/discount being offered under this Program be settled with cash in lieu by AU Bank Credit Cards or by Merchant.
+Offer is applicable only on purchasing FirstCry catalogue.
+Offer is not applicable on the purchase of Digital Products and Gift Certificates.
+The Program is for the consumption of individual retail consumers only.
+FirstCry & AU Bank Credit Cards reserve the right to modify or end the offer during the campaign period.
+Any query regarding the offer will be entertained up to 60 days (about 2 months) from the offer fulfilment date. Post such date, they will not entertain any correspondence or communication regarding this offer from the cardholder.
+<br>Note: FirstCry is a participating entity as per the commercial between AU Bank Credit Cards and Digital Age Retail Pvt Ltd.
+<br>
+SBI Credit Cards Offer | 07th July to 21st July 2024
+OFFER TERMS AND CONDITIONS:
+<br>
+1. This Marketing Program (“Program”) is offered by SBI Card & Payment Services Ltd. (“SBICPSL”) under an arrangement with Digital Age Retail Private Limited (“FirstCry”/Partner).
+<br>2. It is open to all legal residents of India holding a valid and current SBI/Tata Credit Card excluding SBI/Tata Corporate Credit Card, Cashback Card and SBI Paytm Cobrand Card (“Cardholder”) and to whom a communication is sent by SBICPSL and/or FirstCry. Offer is not valid on Rupay Credit Card transactions done via UPI.
+<br>3. The Validity of the Program (“Term”) is from 7th July 2024 expiring on 21st July 2024 (both days including) unless extended by SBICPSL and FirstCry by mutual consent in writing for a further period “additional term”.
+<br>4. Under this Program, cardholder can avail:
+
+<br>a. 5% Instant Discount at Firstcry.com & FirstCry Mobile App.
+<br>b. Minimum Transaction amount - 2500
+<br>c. Maximum discount – Rs 500 per transaction
+<br>d. Offer valid only on 1 transaction per card.
+<br>e. Offer valid on Firstcry.com & Mobile App.
+<br>5. In case of full cancellation/return of your order, transaction will not qualify for the Offer under this program. If you cancel a part of your order, you will qualify for the Offer only on the net amount you pay on the basis eligibility.
+<br>6. Delinquent and blocked SBI/Tata Cardholders will not qualify for this Offer.
+OTHER OFFER TERMS AND CONDITIONS:
+
+<br>1. The above Offer is by way of a special offer for SBI/Tata Credit Cardholders only excluding SBI/Tata Corporate Credit Cardholders and nothing contained herein shall prejudice or affect the terms and conditions of the card member agreement between SBICPSL and their Cardholders. The terms of the above Program shall be in addition to and not in derogation of the terms contained in the card member agreement., Merchant EMI Terms and Conditions and Rewards Terms & Conditions.
+<br>2. Any query regarding the program will be entertained only till 21.07.2024. Post such date, SBICPSL & Partner will not entertain any correspondence or communication in any manner whatsoever regarding this Program from any persons.
+<br>3. As per Rewards Terms & Conditions, Reward points accrued on offer eligible transactions will be forfeited. Reward points will be forfeited for all transactions done during offer period and considered for Offer computation. At the time of forfeiture in case the Cardholder has inadequate Reward Point balance, then an amount equivalent to Reward Points to be Forfeited will be debited from the Cardholder’s account. Effective offers launched from 01 December 2023, reward points forfeiture will be done within 90 days of Cashback posting date for Cashback offers. In case of Instant Discount offers, reward points forfeiture will be done within 6 months of end of offer month. For example, an Instant discount offer ends on 15th December 2023. In this case, end of offer month will be 31st December 2023. Hence, Reward Points forfeiture will happen after 31st December 2023 and before/on 30th June 2024.
+<br>4. SBICPSL does not endorse any of the products or brands being offered under the Program and will not accept any direct liability pertaining to the quality, merchantability, fitness, delivery or after sales service of such products which shall be at the sole liability of the Partner.
+<br>5. All the existing offers, discounts etc. on select/all products or services that are being offered by partner can be availed by the Cardholders as part of this offer as mentioned in this communication.
+<br>6. Pictures of products shown in the communication sent to the customer either through mailers, push notifications, social media channels, statements or advertised on the website/mobile app, are representative only and may not bear a resemblance to the actual products. None of the parties shall under any circumstances be responsible towards the same.
+<br>7. Products/services offered under this program are subject to availability from the respective participating merchants/sellers of Partner and accordingly SBICPSL in no circumstances shall be liable for non-availability of any of the products/services.
+<br>8. SBICPSL shall adhere, cater and ensure on best effort basis to perform the agreed terms and conditions of the program.
+<br>9. SBICPSL will not be liable for any technical or any offer configuration related issue at Partner platform on account of which cardholder is unable to avail the offer. All such concerns need to be taken up directly with the Partner by cardholder for resolution
+<br>10. Under no circumstances will the offer/cashback being offered under this Program be settled with cash in lieu by SBICPSL or by Partner.
+<br>11. Returned transactions, disputed transactions (closed in customer favour) or unauthorized/fraudulent transactions will not be considered for the Offer.
+<br>12. SBICPSL will not entertain any correspondence regarding the validity or acceptability of any additional benefits offered by Partner/Partner’s sellers on products/services made available by it and the same shall be at the sole risk and consequences of Partner/Partner’s sellers and without reference to SBICPSL.
+<br>13. All government Levies like Sales Tax, TDS, any Local Tax, Octroi etc., shall be payable by the Cardholder as applicable at the time the respective Offer was offered.
+<br>14. This Offer shall be subject to all applicable laws, rules and regulations which are in existence and which may be promulgated anytime by any statutory authority.
+<br>15. SBICPSL reserves the right to disqualify the Cardholder(s) from the benefits of the Offer, if any fraudulent activity is identified as being carried out for the purpose of availing the benefits under the said Offer or otherwise by use of the Card subject to intimation to Partner of such disqualification.
+<br>16. Any person availing this Offer shall be deemed to have accepted these terms and conditions.
+<br>17. SBICPSL and Partner reserve the right, at any time, without prior notice and without assigning any reason whatsoever, to add/alter/modify change or vary all or some of these terms and conditions or to replace, wholly or in part, this offer by another offer, whether similar to this Offer or not, or to extend or withdraw it altogether.
+<br>18. Cardholders are not bound in any way to participate in this Offer. Any participation is voluntary and the Offer is being made purely on a best effort basis. 19. Nothing herein amounts to a commitment by SBICPSL to conduct further, similar or other Offers. 20. Any disputes arising out of the Offer between SBICPSL and Cardholder shall be subject to arbitration by a sole arbitrator to be appointed by SBICPSL for this purpose. The proceedings of the arbitration shall be conducted as per the provisions of Arbitration and Conciliation Act, 1996 and amendment thereof. The Seat & Venue of arbitration shall be at New Delhi, India and language of arbitration shall be English. The existence of a dispute, if any, shall not constitute a claim against SBICPSL or Partner or any of its affiliates.
+<br>21. SBICPSL may engage, hire, use the services of agent(s) and/or any third party(ies) for the purpose of providing marketing or sales related services or any other related services in relation to its products on its behalf and the customer may be required to deal with such agents/third parties/service providers with respect to such product/services.
+<br>22. These terms & conditions shall be governed and interpreted as per the laws of India and any dispute relating to these terms & conditions shall be subjected to exclusive jurisdiction of the courts of Delhi.
+
+
+        </p>
+
+
+
+
+
+
+
+       
+
+
+
+        
+    </fieldset>
+</div>
+
+
+
+   
+    <!-- footer -->
+    <br><br>
+    <footer class="footer">
+      <div class="container text-center">
+    
+        <div class="container d-flex justify-content-center">
+          <p class="text-muted custom-box" style="margin-bottom: 20px;">
+              Big store for little ones
+          </p>
+      </div>
+    
+        <!-- <p class="text-muted Container" style="font-size: 20px; background-color: white; border-radius: 20px; margin-bottom: 60px; width: 400px; text-align: center; margin-left: 350px; border-radius: 20px;">Big stote for litle ones</p>
+    
+      </div> -->
+      <div class="container">
+          <div class="row">
+    
+            <div class="col-md-2">
+                <h5>Categories</h5>
+                <ul class="list-unstyled">
+                    <li><a href="boys.html">Boy Fashion</a></li>
+                    <li><a href="girls.html">Girl Fashion</a></li>
+                    <li><a href="footwear.html">Footwear</a></li>
+                    <li><a href="toys.html">Toys</a></li>
+                    <li><a href="feeding.html">Feeding</a></li>
+                    <li><a href="nursery.html">Nursery</a></li>
+    
+    
+                </ul>
+            </div>
+    
+    
+    
+              <div class="col-md-2">
+                  <h5>Company Info</h5>
+                  <ul class="list-unstyled">
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="brand.html">Brands</a></li>
+                      <li><a href="faqs.html">FAQs</a></li>
+                      <li><a href="support.html">Support</a></li>
+
+                  </ul>
+              </div>
+              <div class="col-md-2">
+                  <h5>Payment Method</h5>
+                  <ul class="list-unstyled">
+                      <li><a href="#">Credit Cards</a></li>
+                      <li><a href="#">Net Banking</a></li>
+                      <li><a href="#">ATM & Debit Cards</a></li>
+                      <li><a href="#">COD(Cash on Delivery)</a></li>
+                      <li><a href="#">Easy EMI</a></li>
+    
+                  </ul>
+              </div>
+    
+    
+              <div class="col-md-2">
+                  <h5>Policies</h5>
+                  <ul class="list-unstyled">
+                      <li><a href="shipping.htm">Shipping Policy</a></li>
+                      <li><a href="terms.html">Terms of Use</a></li>
+                      <li><a href="privacy.html">Privacy Policy</a></li>
+                  </ul>
+              </div>
+    
+          
+    
+              <div class="col-md-2">
+                  <h5>Follow Us</h5>
+                  <ul class="list-unstyled">
+                      <li><a href="https://www.facebook.com/share/15yhPE3y95/">Facebook</a></li>
+                      <li><a href="https://www.instagram.com/firstcryindia?igsh=dDh5ZDdvOW5pZ3lt">Instagram</a></li>
+                      <li><a href=" https://x.com/firstcryindia?t=l0NvYS2gDRorpPiqRN6vzw&s=08">Twitter</a></li>
+                      <li><a href="https://www.linkedin.com/company/firstcry/">Linkedin</a></li>
+                      <li><a href="https://youtube.com/@firstcryparenting?si=kcEYkOYsFC_gPt0u">Youtube</a></li>
+                      <li><a href="https://www.whatsapp.com/channel/0029VaBWq863bbV6Lw3j2U19?utm_source=YouTube&utm_medium=Link&utm_campaign=YT_ParentingWAChannel">WhatsApp</a></li>
+    
+    
+    
+                  </ul>
+                 
+              </div>
+          </div>
+      </div>
+    </footer>      
+
+
+</body>
+</html>

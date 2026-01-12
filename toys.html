@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+
+        /* nanbar first */
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+        }
+        .nav-item {
+            display: flex;
+            align-items: center;
+            /* font-size: 13px; */
+        }
+        #l1:not(:last-child)::after {
+            content: " | ";
+            color: black; /* Pipe color */
+            padding: 0 4px; /* Space around the pipe */
+        }
+
+        /* second navbar */
+        /* Ensures proper spacing for navbar items */
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+       
+
+        /* Makes the navbar horizontally scrollable on small screens */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                overflow-x: auto;
+                white-space: nowrap;
+                flex-wrap: nowrap;
+            }
+            .navbar-nav {
+                flex-direction: row;
+            }
+            /* Remove pipe separator for mobile view */
+            .nav-item:not(:last-child)::after {
+                content: none;
+            }
+        }
+
+      
+
+   /* products */
+               body {
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+
+ /* footer */
+ .footer {
+            background-color:lightblue;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .footer a {
+            text-decoration: none;
+            color: #6c757d;
+        }
+        .footer a:hover {
+            color: #007bff;
+        }
+
+        
+/* footer text */
+.custom-box {
+            font-size: 20px;
+            background-color: white;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            max-width: 90%; /* Allows it to scale on smaller screens */
+            width: 400px; /* Default width */
+            margin: auto; /* Centers the box */
+
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-light">
+        <div class="container-fluid" id="productList">
+          <form class="d-flex Container" style="width: 600px;">
+            <img src="fc_logo.png" class="img-fluid">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 300px; margin-left: 10px;">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+    
+            <!-- navbar -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                  <i class="fa fa-map-marker" style="font-size:15px"></i>  
+                                <li class="nav-item" id="l1"><a class="nav-link" href="location.html" style="color: black; font-size: medium;">select location</a></li>
+                    <li class="nav-item" id="l1"><a class="nav-link" href="login.html" style="color: black; font-size: medium;">login/register</a></li>
+                    <i class="fa-regular fa-heart"></i>
+                    <li class="nav-item" id="l1"><a class="nav-link" href="shortlist.html" style="color: black; font-size: medium;">shortlist</a></li>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <li class="nav-item" id="l1"><a class="nav-link" href="cart.html" style="color: black; font-size: medium;"></i>Cart</a></li>
+    
+                    <li class="nav-item dropdown" id="l1">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black; font-size: medium;">
+                          My Account
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="profile.html" style="font-size:medium;">My Profile</a></li>
+                            <li><a class="dropdown-item" href="shortlist.html" style="font-size:medium;">My Shortlist</a></li>
+                            <li><a class="dropdown-item" href="history.html" style="font-size:medium;">Order History</a></li>
+                            <li><a class="dropdown-item" href="logout.html" style="font-size:medium;">Logout</a></li>
+        
+        
+                        </ul>
+                    </li>
+                    
+                </ul>
+               
+            </div>
+        </div>
+    </nav>
+      
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+      <div class="container-fluid">
+          
+          <!-- Toggle Button for Mobile -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <!-- Collapsible Navbar Content -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        ALL CATEGORIES
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="boys.html">BOY FASHION</a></li>
+                          <li><a class="dropdown-item" href="girls.html">GIRL FASHION</a></li>
+                          <li><a class="dropdown-item" href="footwear.html">FOOTWEAR</a></li>
+                          <li><a class="dropdown-item" href="toys.html">TOYS</a></li>
+                          <li><a class="dropdown-item" href="feeding.html">FEEDING</a></li>
+                          <li><a class="dropdown-item" href="nursery.html">NURSERY</a></li>
+    
+    
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      </ul>
+                  </li>
+    
+                  <li class="nav-item"><a class="nav-link active" href="boys.html">BOY FASHION</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="girls.html">GIRL FASHION</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="footwear.html">FOOTWEAR</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="toys.html">TOYS</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="feeding.html">FEEDING</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="nursery.html">NURSERY</a></li>
+              </ul>
+          </div>
+      </div>
+    </nav>
+    
+
+    
+    <!-- Product Section -->
+    <div class="container mt-4">
+        <div class="row">
+        <!-- Product 1 -->
+        <div class="col-md-3">
+            <div class="card product-card" onclick="openForm('Product 2', 'NEGOCIO Singing Talking Recording Dancing Cactus Toy - Green Brown.', '$75', 'https://via.placeholder.com/150/33FF57')">
+                <img src="58.webp" class="card-img-top" alt="Product 1">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-size: 13px;">NEGOCIO Singing Talking Recording Dancing Cactus Toy - Green Brown...</h5>
+                    <p class="card-text">Rs499 <del>MRP:1199</del> <span style="color: red;">(58% OFF)</span></p>
+                    <button class="btn btn-primary w-100">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <!-- Product 2 -->
+        <div class="col-md-3">
+            <div class="card product-card" onclick="openForm('Product 2', 'YAMAMA 112 colorful Double-Sided Educational Learning Talking Flash Cards Cards 224 Words (Colour May Vary).', '$75', 'https://via.placeholder.com/150/33FF57')">
+                <img src="59.webp" class="card-img-top" alt="Product 2">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-size: 13px;">YAMAMA 112 colorful Double-Sided Educational Learning Talking Flash...</h5>
+                    <p class="card-text">Rs876.96 <del>MRP:1050</del> <span style="color: red;">(upto 16% OFF)</span></p>
+                    <button class="btn btn-primary w-100">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <!-- Product 3 -->
+        <div class="col-md-3">
+            <div class="card product-card" onclick="openForm('Product 2', 'Bonfino Premium My Little Zoo House with Carry Handle| 7 Jungle Safari Plush Figurines Toys| Lion, Parrot, Crocodile, Elephant, Monkey, Giraffe, Zebra| Pretend Play| Education and Montessori Learning Toy| BIS Certified| Gifting Toy.', '$75', 'https://via.placeholder.com/150/33FF57')">
+                <img src="60.webp" class="card-img-top" alt="Product 3">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-size: 13px;">Bonfino Premium My Little Zoo House with Carry Handle| 7 Jungle Safari...</h5>
+                    <p class="card-text">Rs1336.65 <del>MRP:19995</del> <span style="color: red;">(33% OFF)</span></p>
+                    <button class="btn btn-primary w-100">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+       
+        <!-- Product 4 -->
+        <div class="col-md-3">
+            <div class="card product-card" onclick="openForm('Product 2', 'Babyhug Premium Musical Activity Table| Multi Activity Play Table for 1 Year+ Toddlers| Early Learning & Educational Toy with Shapes, Numbers, Colors & Sound| Best Birthday Gift| BIS Certified.', '$75', 'https://via.placeholder.com/150/33FF57')">
+                <img src="61.webp" class="card-img-top" alt="Product 4">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-size: 13px;">Babyhug Premium Musical Activity Table| Multi Activity Play Table...</h5>
+                    <p class="card-text">Rs499 <del>MRP:1199</del> <span style="color: red;">(58% OFF)</span></p>
+                    <button class="btn btn-primary w-100">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+  
+         <!-- 5 -->
+         <div class="col-md-3">
+            <div class="card product-card" onclick="openForm('Product 2', 'Play Nation Premium Baby Kick and Play Piano Peach Play Gym with Lights, Music and 5 Hanging Rattles| Animal Theme Play Mat Carpet with Musical Keyboard| Activity Portable Playmat Gifting Toy for 0-18 Months| BIS Certified.', '$75', 'https://via.placeholder.com/150/33FF57')">
+                <img src="62.webp" class="card-img-top" alt="Product 3">
+              <div class="card-body">
+                  <h5 class="card-title" style="font-size: 13px;">Play Nation Premium Baby Kick and Play Piano Peach Play Gym...</h5>
+                  <p class="card-text">Rs624.15<del>MRP:1095</del> <span style="color: red;">( upto 43% OFF)</span></p>
+                  <button class="btn btn-primary w-100">Add to Cart</button>
+              </div>
+          </div>
+      </div>
+  
+  
+       <!-- 6 -->
+       <div class="col-md-3">
+        <div class="card product-card" onclick="openForm('Product 2', 'Babyhug Premium Tiger Free Wheel Car Cum Orange Rattle Toy| Fun, Flexible, and Soothing Rattle Toy for Kids|Gifting Toy| Child Safe Material| Improves Motor Skills| Early Development Toys for 3+ Months| Non-Toxic| BIS Certified.', '$75', 'https://via.placeholder.com/150/33FF57')">
+            <img src="63.webp" class="card-img-top" alt="Product 3">
+            <div class="card-body">
+                <h5 class="card-title" style="font-size: 13px;">Babyhug Premium Tiger Free Wheel Car Cum Orange Rattle Toy| Fun...</h5>
+                <p class="card-text">Rs1336.65 <del>MRP:1995</del> <span style="color: red;">(33% OFF)</span></p>
+                <button class="btn btn-primary w-100">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+  
+     <!-- 7 -->
+     <div class="col-md-3">
+        <div class="card product-card" onclick="openForm('Product 2', 'Babyhug 3 in 1 Swing and Slide with Basket Ball Hoop - Blue & Yellow.', '$75', 'https://via.placeholder.com/150/33FF57')">
+            <img src="64.webp" class="card-img-top" alt="Product 3">
+          <div class="card-body">
+              <h5 class="card-title" style="font-size: 13px;">Babyhug 3 in 1 Swing and Slide with Basket Ball Hoop - Blue & Yellow...</h5>
+              <p class="card-text">Rs1537.65 <del>MRP:2295</del> <span style="color: red;">(upto 37% OFF)</span></p>
+              <button class="btn btn-primary w-100">Add to Cart</button>
+          </div>
+      </div>
+  </div>
+  
+  
+   <!-- 8 -->
+   <div class="col-md-3">
+    <div class="card product-card" onclick="openForm('Product 2', 'Intelliskills Premium 64 Pieces Magnetic Building Sticks & Balls Toy | Activity & Education Blocks | Montessori Learning & Construction | Unlimited Play | Non-Toxic.', '$75', 'https://via.placeholder.com/150/33FF57')">
+        <img src="65.webp" class="card-img-top" alt="Product 3">
+        <div class="card-body">
+            <h5 class="card-title" style="font-size: 13px;">Intelliskills Premium 64 Pieces Magnetic Building Sticks & Balls...</h5>
+            <p class="card-text">Rs499 <del>MRP:1199</del> <span style="color: red;">(58% OFF)</span></p>
+            <button class="btn btn-primary w-100">Add to Cart</button>
+        </div>
+    </div>
+  </div>
+
+
+<!-- 9 -->
+  <div class="col-md-3">
+    <div class="card product-card" onclick="openForm('Product 2', 'Babyhug Premium 26 pcs Capital Alphabet Wooden Board puzzle for Toddlers| ABC Puzzle Montessori Educational and Learning Toy | Shape Matching Puzzle |Preschool Colorful Knob and Peg Puzzle| BIS Certified| 18+ months.', '$75', 'https://via.placeholder.com/150/33FF57')">
+        <img src="66.webp" class="card-img-top" alt="Product 3">
+        <div class="card-body">
+            <h5 class="card-title" style="font-size: 13px;">Babyhug Premium 26 pcs Capital Alphabet Wooden Board puzzle...</h5>
+            <p class="card-text">Rs673.72 <del>MRP:1199</del> <span style="color: red;">(44% OFF)</span></p>
+            <button class="btn btn-primary w-100">Add to Cart</button>
+        </div>
+    </div>
+  </div>
+
+
+  
+<!-- 10 -->
+<div class="col-md-3">
+    <div class="card product-card" onclick="openForm('Product 2', 'Hot Wheels Color Shifters Track and 1 Car - Multicolour.', '$75', 'https://via.placeholder.com/150/33FF57')">
+        <img src="67.webp" class="card-img-top" alt="Product 3">
+        <div class="card-body">
+            <h5 class="card-title" style="font-size: 13px;">Hot Wheels Color Shifters Track and 1 Car - Multicolour...</h5>
+            <p class="card-text">Rs428 <del>MRP:595</del> <span style="color: red;">(30% OFF)</span></p>
+            <button class="btn btn-primary w-100">Add to Cart</button>
+        </div>
+    </div>
+  </div>
+
+
+  
+<!-- 11-->
+<div class="col-md-3">
+    <div class="card product-card" onclick="openForm('Product 2', 'YAMAMA Little Driver Steering Wheel Toy With Music & Light For Kids Multicolour.', '$75', 'https://via.placeholder.com/150/33FF57')">
+        <img src="68.webp" class="card-img-top" alt="Product 3">
+        <div class="card-body">
+            <h5 class="card-title" style="font-size: 13px;">YAMAMA Little Driver Steering Wheel Toy With Music & Light For Kids...</h5>
+            <p class="card-text">Rs499 <del>MRP:1199</del> <span style="color: red;">(58% OFF)</span></p>
+            <button class="btn btn-primary w-100">Add to Cart</button>
+        </div>
+    </div>
+  </div>
+
+
+  
+<!-- 12 -->
+<div class="col-md-3">
+    <div class="card product-card" onclick="openForm('Product 2', 'Mi Arcus Stampy elephant Soft Toy Height 50 cm.', '$75', 'https://via.placeholder.com/150/33FF57')">
+        <img src="69.webp" class="card-img-top" alt="Product 3">
+        <div class="card-body">
+            <h5 class="card-title" style="font-size: 13px;">Mi Arcus Stampy elephant Soft Toy Height 50 cm...</h5>
+            <p class="card-text">Rs289 <del>MRP:425</del> <span style="color: red;">(upto 425% OFF)</span></p>
+            <button class="btn btn-primary w-100">Add to Cart</button>
+        </div>
+    </div>
+  </div>
+
+
+  
+<!-- 13-->
+<div class="col-md-3">
+    <div class="card product-card" onclick="openForm('Product 2', 'Play Nation Teddy Bear Soft Toy Cream - Height 90 cm.', '$75', 'https://via.placeholder.com/150/33FF57')">
+        <img src="70.webp" class="card-img-top" alt="Product 3">
+        <div class="card-body">
+            <h5 class="card-title" style="font-size: 13px;">Play Nation Teddy Bear Soft Toy Cream - Height 90 cm...</h5>
+            <p class="card-text">Rs250.75 <del>MRP:425</del> <span style="color: red;">(upto 46% OFF)</span></p>
+            <button class="btn btn-primary w-100">Add to Cart</button>
+        </div>
+    </div>
+  </div>
+
+    
+<!-- 14-->
+<div class="col-md-3">
+    <div class="card product-card" onclick="openForm('Product 2', 'Intelliskills Premium 60 Pieces What Goes Together Jigsaw Puzzle for Kids | Floor Puzzle for Children| Vocabulary Building Educational Toy for Toddlers | Improves Cognitive & Sorting Skills | Multicoloured |Gifts for Boys & Girls | BIS Certified | E.', '$75', 'https://via.placeholder.com/150/33FF57')">
+        <img src="71.webp" class="card-img-top" alt="Product 3">
+        <div class="card-body">
+            <h5 class="card-title" style="font-size: 13px;">Intelliskills Premium 60 Pieces What Goes Together Jigsaw Puzzle...</h5>
+            <p class="card-text">Rs698.76 <del>MRP:1599</del> <span style="color: red;">(upto 60% OFF)</span></p>
+            <button class="btn btn-primary w-100">Add to Cart</button>
+        </div>
+    </div>
+  </div>
+
+    
+<!-- 15-->
+<div class="col-md-3">
+    <div class="card product-card" onclick="openForm('Product 2', 'Babyhug 150 Pieces Early Learning and Educational Double Sided Flash Cards- 8 Sets.', '$75', 'https://via.placeholder.com/150/33FF57')">
+        <img src="72.webp" class="card-img-top" alt="Product 3">
+        <div class="card-body">
+            <h5 class="card-title" style="font-size: 13px;">Babyhug 150 Pieces Early Learning and Educational Double Sided Flash...</h5>
+            <p class="card-text">Rs719.28 <del>MRP:999</del> <span style="color: red;">(upto 32% OFF)</span></p>
+            <button class="btn btn-primary w-100">Add to Cart</button>
+        </div>
+    </div>
+  </div>
+
+
+    
+<!-- 16-->
+<div class="col-md-3">
+    <div class="card product-card" onclick="openForm('Product 2', 'Play Nation 3-in-1 Fastest Finger First Wooden Board Game| Improves Hand eye Co-ordination| Learning and Educational Toy| Family Board Game with Sling Puck Board, Chess, Ludo Snake & Ladder| Indoor Toys & Games for 5 Years+ Kids| BIS Certified.', '$75', 'https://via.placeholder.com/150/33FF57')">
+        <img src="73.webp" class="card-img-top" alt="Product 3">
+        <div class="card-body">
+            <h5 class="card-title" style="font-size: 13px;">Play Nation 3-in-1 Fastest Finger First Wooden Board Game| Improves...</h5>
+            <p class="card-text">Rs272 <del>MRP:425</del> <span style="color: red;">(upto 46% OFF)</span></p>
+            <button class="btn btn-primary w-100">Add to Cart</button>
+        </div>
+    </div>
+  </div>
+
+  
+  
+    </div>
+  </div>
+
+
+
+
+
+  <!-- Product Details Form Modal -->
+<div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="orderModalLabel">Product Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="orderForm">
+                    <!-- Product Image -->
+                
+                    <div class="mb-3">
+                        <label for="productName" class="form-label">Product Name</label>
+                        <input type="text" class="form-control" id="productName" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="productDescription" class="form-label">Description</label>
+                        <textarea class="form-control" id="productDescription" readonly></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="productPrice" class="form-label">Price</label>
+                        <input type="text" class="form-control" id="productPrice" readonly>
+                    </div>
+                    <hr>
+                    <h5>User Details</h5>
+                    <div class="mb-3">
+                        <label for="userName" class="form-label">Your Name</label>
+                        <input type="text" class="form-control" id="userName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="userEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="userEmail" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="userAddress" class="form-label">Address</label>
+                        <textarea class="form-control" id="userAddress" rows="2" required></textarea>
+                    </div>
+                    <!-- Payment Options -->
+                    <div class="mb-3">
+                        <label class="form-label">Payment Method</label>
+                        <select class="form-select" id="paymentMethod" required>
+                            <option value="Credit Card">Credit Card</option>
+                            <option value="PayPal">PayPal</option>
+                            <option value="Cash on Delivery">Cash on Delivery</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Place Order</button>
+                </form>
+                <div id="successMessage" class="alert alert-success mt-3 d-none">
+                    🎉 Order placed successfully!
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openForm(productName, productDescription, productPrice, productImage) {
+        document.getElementById('productName').value = productName;
+        document.getElementById('productDescription').value = productDescription;
+        document.getElementById('productPrice').value = productPrice;
+        
+        document.getElementById('successMessage').classList.add('d-none'); // Hide success message
+
+        var modal = new bootstrap.Modal(document.getElementById('orderModal'));
+        modal.show();
+    }
+
+    document.getElementById('orderForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        document.getElementById('successMessage').classList.remove('d-none'); // Show success message
+
+        // Reset form after delay
+        setTimeout(() => {
+            document.getElementById('orderForm').reset();
+        }, 2000);
+    });
+</script>
+
+  
+
+
+    <!-- footer -->
+    <br><br>
+    <footer class="footer">
+      <div class="container text-center">
+    
+        <div class="container d-flex justify-content-center">
+          <p class="text-muted custom-box" style="margin-bottom: 20px;">
+              Big store for little ones
+          </p>
+      </div>
+    
+        <!-- <p class="text-muted Container" style="font-size: 20px; background-color: white; border-radius: 20px; margin-bottom: 60px; width: 400px; text-align: center; margin-left: 350px; border-radius: 20px;">Big stote for litle ones</p>
+    
+      </div> -->
+      <div class="container">
+          <div class="row">
+    
+            <div class="col-md-2">
+                <h5>Categories</h5>
+                <ul class="list-unstyled">
+                    <li><a href="boys.html">Boy Fashion</a></li>
+                    <li><a href="girls.html">Girl Fashion</a></li>
+                    <li><a href="footwear.html">Footwear</a></li>
+                    <li><a href="toys.html">Toys</a></li>
+                    <li><a href="feeding.html">Feeding</a></li>
+                    <li><a href="nursery.html">Nursery</a></li>
+    
+    
+                </ul>
+            </div>
+    
+    
+    
+              <div class="col-md-2">
+                  <h5>Company Info</h5>
+                  <ul class="list-unstyled">
+                      <li><a href="contact.html">Contact Us</a></li>
+                      <li><a href="brand.html">Brands</a></li>
+                      <li><a href="faqs.html">FAQs</a></li>
+                      <li><a href="support.html">Support</a></li>
+
+                  </ul>
+              </div>
+              <div class="col-md-2">
+                  <h5>Payment Method</h5>
+                  <ul class="list-unstyled">
+                      <li><a href="#">Credit Cards</a></li>
+                      <li><a href="#">Net Banking</a></li>
+                      <li><a href="#">ATM & Debit Cards</a></li>
+                      <li><a href="#">COD(Cash on Delivery)</a></li>
+                      <li><a href="#">Easy EMI</a></li>
+    
+                  </ul>
+              </div>
+    
+    
+              <div class="col-md-2">
+                  <h5>Policies</h5>
+                  <ul class="list-unstyled">
+                      <li><a href="shipping.htm">Shipping Policy</a></li>
+                      <li><a href="terms.html">Terms of Use</a></li>
+                      <li><a href="privacy.html">Privacy Policy</a></li>
+                  </ul>
+              </div>
+    
+          
+    
+              <div class="col-md-2">
+                  <h5>Follow Us</h5>
+                  <ul class="list-unstyled">
+                      <li><a href="https://www.facebook.com/share/15yhPE3y95/">Facebook</a></li>
+                      <li><a href="https://www.instagram.com/firstcryindia?igsh=dDh5ZDdvOW5pZ3lt">Instagram</a></li>
+                      <li><a href=" https://x.com/firstcryindia?t=l0NvYS2gDRorpPiqRN6vzw&s=08">Twitter</a></li>
+                      <li><a href="https://www.linkedin.com/company/firstcry/">Linkedin</a></li>
+                      <li><a href="https://youtube.com/@firstcryparenting?si=kcEYkOYsFC_gPt0u">Youtube</a></li>
+                      <li><a href="https://www.whatsapp.com/channel/0029VaBWq863bbV6Lw3j2U19?utm_source=YouTube&utm_medium=Link&utm_campaign=YT_ParentingWAChannel">WhatsApp</a></li>
+    
+    
+    
+                  </ul>
+                 
+              </div>
+          </div>
+      </div>
+    </footer>
+
+</body>
+</html>

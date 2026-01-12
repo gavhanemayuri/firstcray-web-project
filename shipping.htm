@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shipping Policies</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        fieldset {
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+
+   
+        /* nanbar first */
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+        }
+        .nav-item {
+            display: flex;
+            align-items: center;
+            /* font-size: 13px; */
+        }
+        #l1:not(:last-child)::after {
+            content: " | ";
+            color: black; /* Pipe color */
+            padding: 0 4px; /* Space around the pipe */
+        }
+
+        /* second navbar */
+        /* Ensures proper spacing for navbar items */
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        /* Adds a pipe separator between nav items, except for the last one */
+        /* .nav-item:not(:last-child)::after {
+            content: " | ";
+            color: black;
+            padding: 0 8px;
+            font-weight: bold;
+        } */
+
+        /* Makes the navbar horizontally scrollable on small screens */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                overflow-x: auto;
+                white-space: nowrap;
+                flex-wrap: nowrap;
+            }
+            .navbar-nav {
+                flex-direction: row;
+            }
+            /* Remove pipe separator for mobile view */
+            .nav-item:not(:last-child)::after {
+                content: none;
+            }
+        }
+
+        /* footer */
+        .footer {
+            background-color:lightblue;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .footer a {
+            text-decoration: none;
+            color: #6c757d;
+        }
+        .footer a:hover {
+            color: #007bff;
+        }
+   
+    </style>
+</head>
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-light">
+        <div class="container-fluid" id="productList">
+          <form class="d-flex Container" style="width: 600px;">
+            <img src="fc_logo.png" class="img-fluid">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 300px; margin-left: 10px;">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+    
+            <!-- navbar -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                  <i class="fa fa-map-marker" style="font-size:15px"></i>  
+                                <li class="nav-item" id="l1"><a class="nav-link" href="location.html" style="color: black; font-size: medium;">select location</a></li>
+                    <li class="nav-item" id="l1"><a class="nav-link" href="login.html" style="color: black; font-size: medium;">login/register</a></li>
+                    <!-- <li class="nav-item" id="l1"><a class="nav-link" href="#" style="color: black;">My Account</a></li> -->
+                    <i class="fa-regular fa-heart"></i>
+                    <li class="nav-item" id="l1"><a class="nav-link" href="shortlist.html" style="color: black; font-size: medium;">shortlist</a></li>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <li class="nav-item" id="l1"><a class="nav-link" href="#" style="color: black; font-size: medium;"></i>Cart</a></li>
+    
+                    <li class="nav-item dropdown" id="l1">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black; font-size: medium;">
+                          My Account
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="profile.html" style="font-size:medium;">My Profile</a></li>
+                            <li><a class="dropdown-item" href="shortlist.html" style="font-size:medium;">My Shortlist</a></li>
+                            <li><a class="dropdown-item" href="footwear.html" style="font-size:medium;">Order History</a></li>
+                            <li><a class="dropdown-item" href="logout.html" style="font-size:medium;">Logout</a></li>
+        
+        
+                            <!-- <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+                        </ul>
+                    </li>
+                    
+                </ul>
+               
+            </div>
+        </div>
+    </nav>
+      
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+      <div class="container-fluid">
+          
+          <!-- Toggle Button for Mobile -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <!-- Collapsible Navbar Content -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        ALL CATEGORIES
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="boys.html">BOY FASHION</a></li>
+                          <li><a class="dropdown-item" href="girls.html">GIRL FASHION</a></li>
+                          <li><a class="dropdown-item" href="footwear.html">FOOTWEAR</a></li>
+                          <li><a class="dropdown-item" href="toys.html">TOYS</a></li>
+                          <li><a class="dropdown-item" href="feeding.html">FEEDING</a></li>
+                          <li><a class="dropdown-item" href="nursery.html">NURSERY</a></li>
+    
+    
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      </ul>
+                  </li>
+    
+                  <li class="nav-item"><a class="nav-link active" href="boys.html">BOY FASHION</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="girls.html">GIRL FASHION</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="footwear.html">FOOTWEAR</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="toys.html">TOYS</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="feeding.html">FEEDING</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="nursery.html">NURSERY</a></li>
+              </ul>
+          </div>
+      </div>
+    </nav>
+
+    <!-- policy -->
+<div class="container my-4">
+    <fieldset>
+        <div class="text-center">
+            <h1 class="fw-bold text-dark">SHIPPING POLICY</h1>
+        </div>
+        
+        <p>
+            FirstCry ships its products to almost all parts of India. Orders placed will be shipped within 24* hrs. We ship on all days except Sunday and National Holidays.
+
+<h6>Shipping Charges:</h6> A fixed shipping charge of Rs. 50 is applicable on all orders below Rs. 699/- (Excluding COD charges, Shipping charges, Taxes or value reduced after application of coupons or any other offer) at all locations with an additional charge applicable at certain locations.
+
+For orders equal to or above Rs. 699 (Excluding COD charges, Shipping charges, Taxes or value reduced after application of coupons or any other offer) free shipping is available at certain locations only. For other locations, additional shipping charges will be applicable. At these locations, in which additional charges are applicable, the Rs. 50 shipping charge will be added to the shipping charges for all orders below Rs. 699 (with exclusions as above).
+
+The shipping charge applicable per quantity of the product can be checked by entering your pin code details on the product pages and the total shipping charge applicable on the order will be the sum of the charges for all chargeable product(s) in your order (+ Rs. 50 for orders below Rs. 699). The order level charge will be visible to you in the cart as well as when you enter the shipping address while you are checking out with your order.
+
+These shipping charges applicable are not refundable in the case of return/cancellation of the product or the order.
+
+The shipping charges can be modified by Firstcry at any point without prior intimation. The new charges would reflect on the product page as well as in the checkout flow.
+
+Every once in a while, Firstcry brings out various offers in an attempt to satisfy customers. Various offers could be introduced for a limited span of time that enable free shipping of goods, subject to the fulfilment of the terms and conditions attached to the offer.
+
+In light of the COVID- 19 outbreak, we will not be deducting the shipping charges while processing a cancellation request for all orders placed during the nation-wide lockdown.This is to avoid any inconvenience to our customers.
+
+<h6>Convenience Charges:</h6> Firstcry can levy convenience charges on specific orders basis the products, pincode, or the size of the shipment.
+<h6>Platform and Convenience Fee: </h6>FirstCry reserves the right to levy a Platform and Convenience charge on orders. Platform & Convenience fee is applied to help us continuously maintain and improve the hassle-free shopping and smooth fulfillment experience.
+This charge is not related to the shipping charges and can be applied to the order irrespective of the shipping cost (refer ‘Shipping Charges’ section above for more details on shipping cost).
+It is possible that an order can have- 1. only shipping charges applied (basis the order value),2. only convenience charge applied or 3. both shipping charge and convenience charge applied. Convenience charges, if applied, will be shown in the ‘Shipping Cost’ field in the cart/checkout sections. Users can see the details on the type of charge applied by clicking on the tooltip which is available on cart/checkout with the ‘shipping Cost’ field in the payment summary section.
+
+These convenience charges applicable are not refundable in the case of return/cancellation of the product or the order.
+
+Firstcry reserves the right to modify the logic of applying convenience charges on orders at any point without prior intimation.
+
+<h6>Estimated Delivery Time:</h6> During Covid lockdown delivery is subject to MHA and state government guidelines.
+For all areas serviced by reputed couriers, the delivery time would be within 3 to 4 business days of shipping (business days exclude Sundays and other holidays). However items weighing over 2 kilos or high volume may take a couple of days longer to reach. For other areas the products will be shipped through Indian Postal Service and may take 1-2 weeks depending on location.
+
+The delivery date displayed while placing the order i.e. on the Product Details, Cart, Checkout and Order Confirmation page and in the order confirmation email are tentative. It may change once the order is shipped. Post shipment of the order, an Estimated Delivery Date will be displayed in the 'Order Details' under 'My Account ' section which will help you to keep a track of the shipment status of your order.
+
+FirstCry ensures to provide a delightful customer experience by delivering the products as per the Estimated Delivery Date communicated as above, however, at times there might be unexpected delays in the delivery of your order due to unavoidable and undetermined logistics challenges beyond our control for which FirstCry is not liable and would request its users to cooperate as FirstCry continuously tries to nought such instances. Also, FirstCry reserves the right to cancel your order at its sole discretion in cases where it takes longer than usual delivery time or the shipment is physically untraceable and refund the amount paid for cancelled product(s) in your FirstCry wallet.
+
+Address Change: You can change the delivery address of your order only if the order is in Confirmed or Pending status and none of the item(s) purchased in the order are shipped. However, if there are any variations in the charges/taxes (if any) applied for the original delivery address used while placing the order v/s the delivery address to be updated, the request for updating the delivery address might not be accepted.
+
+<h6>Hidden Charges (Sales tax, Octroi etc):</h6> You will get the final price during check out. Our prices are all inclusive and you need not pay anything extra.
+
+<h6>International Locations:</h6> Currently we do not deliver to locations outside India
+
+<h6>Tracking Packages:</h6> We will mail you the name of the courier company and the tracking number of your consignment in your registered email address. In case you do not receive a mail from us within 24hrs of placing an order please check your spam folder. Tracking may not appear online for up to another 24 hours in some cases, so please wait until your package is scanned by the courier company.
+
+<h6>Non-availability on Delivery: </h6>Our delivery partners will attempt to deliver the package thrice before it is returned back to our warehouse. Please provide your mobile number in the delivery address as it will help in making a faster delivery.
+
+Secured Delivery with OTP (One-Time Password): FirstCry's delivery with OTP (One-Time Password) is an added layer of security for your package deliveries. When your package is out for delivery, a six-digit OTP is sent to your Shipping mobile number. This ensures that only you, or someone with access to your mobile phone, can receive the package.
+
+A six-digit OTP is sent to your shipping mobile number when your package is out for delivery via SMS/Whatsapp. You can also find your delivery OTP in the tracking details of your orders in the 'My Account' section.
+
+Please refrain from sharing the OTP to delivery agents unless they are physically present at the doorstep to deliver the shipment. Do not share OTP over Phone with Delivery Agent.
+
+In the event that an OTP is shared with anyone prior to the delivery agent's arrival and delivery of the shipment, Firstcry shall not be responsible in any manner or reasons whatsoever for any potential misuse or unauthorized access to OTP for delivery of shipment.
+
+* Valid only for owned stock. Shipping time may increase for third party shipments.
+
+        </p>
+
+        
+    </fieldset>
+</div>
+
+
+
+      
+    <!-- footer -->
+    <br><br>
+    <footer class="footer">
+      <div class="container text-center">
+    
+        <div class="container d-flex justify-content-center">
+          <p class="text-muted custom-box" style="margin-bottom: 20px;">
+              Big store for little ones
+          </p>
+      </div>
+    
+        <!-- <p class="text-muted Container" style="font-size: 20px; background-color: white; border-radius: 20px; margin-bottom: 60px; width: 400px; text-align: center; margin-left: 350px; border-radius: 20px;">Big stote for litle ones</p>
+    
+      </div> -->
+      <div class="container">
+          <div class="row">
+    
+            <div class="col-md-2">
+                <h5>Categories</h5>
+                <ul class="list-unstyled">
+                    <li><a href="boys.html">Boy Fashion</a></li>
+                    <li><a href="girls.html">Girl Fashion</a></li>
+                    <li><a href="footwear.html">Footwear</a></li>
+                    <li><a href="toys.html">Toys</a></li>
+                    <li><a href="feeding.html">Feeding</a></li>
+                    <li><a href="nursery.html">Nursery</a></li>
+    
+    
+                </ul>
+            </div>
+    
+    
+    
+              <div class="col-md-2">
+                  <h5>Company Info</h5>
+                  <ul class="list-unstyled">
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="brand.html">Brands</a></li>
+                      <li><a href="faqs.html">FAQs</a></li>
+                      <li><a href="support.html">Support</a></li>
+
+                  </ul>
+              </div>
+              <div class="col-md-2">
+                  <h5>Payment Method</h5>
+                  <ul class="list-unstyled">
+                      <li><a href="#">Credit Cards</a></li>
+                      <li><a href="#">Net Banking</a></li>
+                      <li><a href="#">ATM & Debit Cards</a></li>
+                      <li><a href="#">COD(Cash on Delivery)</a></li>
+                      <li><a href="#">Easy EMI</a></li>
+    
+                  </ul>
+              </div>
+    
+    
+              <div class="col-md-2">
+                  <h5>Policies</h5>
+                  <ul class="list-unstyled">
+                      <li><a href="shipping.htm">Shipping Policy</a></li>
+                      <li><a href="terms.html">Terms of Use</a></li>
+                      <li><a href="privacy.html">Privacy Policy</a></li>
+                  </ul>
+              </div>
+    
+          
+    
+              <div class="col-md-2">
+                  <h5>Follow Us</h5>
+                  <ul class="list-unstyled">
+                      <li><a href="https://www.facebook.com/share/15yhPE3y95/">Facebook</a></li>
+                      <li><a href="https://www.instagram.com/firstcryindia?igsh=dDh5ZDdvOW5pZ3lt">Instagram</a></li>
+                      <li><a href=" https://x.com/firstcryindia?t=l0NvYS2gDRorpPiqRN6vzw&s=08">Twitter</a></li>
+                      <li><a href="https://www.linkedin.com/company/firstcry/">Linkedin</a></li>
+                      <li><a href="https://youtube.com/@firstcryparenting?si=kcEYkOYsFC_gPt0u">Youtube</a></li>
+                      <li><a href="https://www.whatsapp.com/channel/0029VaBWq863bbV6Lw3j2U19?utm_source=YouTube&utm_medium=Link&utm_campaign=YT_ParentingWAChannel">WhatsApp</a></li>
+    
+    
+    
+                  </ul>
+                 
+              </div>
+          </div>
+      </div>
+    </footer>      
+
+
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+/* General body styles */
+body {
+    background-color: #f8f9fa; /* Light gray background */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Center the form */
+.container {
+    max-width: 700px;
+}
+
+/* Style the card */
+.card {
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form headings */
+h2, h4 {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Labels */
+.form-label {
+    font-weight: 500;
+}
+
+/* Input fields */
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+}
+
+/* Focus effect on input */
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Gender radio buttons */
+.form-check-label {
+    font-weight: 500;
+}
+
+/* Subscription checkboxes */
+.form-check-input {
+    cursor: pointer;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    width: 120px;
+}
+
+/* Primary button */
+.btn-primary {
+    background-color: #d76028;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Secondary button */
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* Spacing between sections */
+.mt-4 {
+    margin-top: 1.5rem !important;
+}

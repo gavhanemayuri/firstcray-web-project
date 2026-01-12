@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order History</title>
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        #a {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .marquee-container {
+            overflow: hidden;
+            position: relative;
+            white-space: nowrap;
+        }
+        .marquee-container img {
+            display: inline-block;
+            animation: marquee 5s linear infinite;
+        }
+        @keyframes marquee {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+        .btn-orange {
+            background: orange;
+            border: none;
+            font-weight: bold;
+        }
+        .btn-orange:hover {
+            background: darkorange;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="a">
+        <!-- Navbar -->
+        <nav class="navbar navbar-light bg-light rounded">
+            <h1 class="h1"><a href="#" class="nav-link text-dark">Order History</a></h1>
+        </nav>
+
+        <!-- Marquee -->
+        <div class="marquee-container my-4">
+            <img src="https://img.freepik.com/free-psd/empty-shopping-cart-transparent-background_84443-31013.jpg" 
+                 alt="Shopping Cart" width="150px" height="150px" 
+                 style="border-radius: 200px;">
+        </div>
+
+        <!-- Message -->
+        <h5 class="text-center text-muted">Looks like you haven't shopped yet!</h5>
+        <p class="text-center text-secondary">
+            Shop from our amazing range of products with great offers and discounts.
+        </p>
+
+        <!-- Start Shopping Button -->
+        <div class="text-center mt-4">
+            <button class="btn btn-orange btn-lg w-100" type="button" onclick="startShopping()">
+                START SHOPPING
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function startShopping() {
+            window.location.href = "shop.html"; // Replace with actual shopping page URL
+        }
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      /* nanbar first */
+      .navbar-nav {
+            display: flex;
+            align-items: center;
+        }
+        .nav-item {
+            display: flex;
+            align-items: center;
+            /* font-size: 13px; */
+        }
+        #l1:not(:last-child)::after {
+            content: " | ";
+            color: black; /* Pipe color */
+            padding: 0 4px; /* Space around the pipe */
+        }
+
+        /* second navbar */
+        /* Ensures proper spacing for navbar items */
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+       
+
+        /* Makes the navbar horizontally scrollable on small screens */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                overflow-x: auto;
+                white-space: nowrap;
+                flex-wrap: nowrap;
+            }
+            .navbar-nav {
+                flex-direction: row;
+            }
+            /* Remove pipe separator for mobile view */
+            .nav-item:not(:last-child)::after {
+                content: none;
+            }
+        }
+
+        /* footer */
+        .footer {
+            background-color:lightblue;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .footer a {
+            text-decoration: none;
+            color: #6c757d;
+        }
+        .footer a:hover {
+            color: #007bff;
+        }
+        /* product */
+
+        body {
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* footer text */
+.custom-box {
+            font-size: 20px;
+            background-color: white;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            max-width: 90%; /* Allows it to scale on smaller screens */
+            width: 400px; /* Default width */
+            margin: auto; /* Centers the box */
+
+        }
+       
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-light">
+        <div class="container-fluid" id="productList">
+          <form class="d-flex Container" style="width: 600px;">
+            <img src="fc_logo.png" class="img-fluid">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 300px; margin-left: 10px;">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+    
+            <!-- navbar -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                  <i class="fa fa-map-marker" style="font-size:15px"></i>  
+                                <li class="nav-item" id="l1"><a class="nav-link" href="location.html" style="color: black; font-size: medium;">select location</a></li>
+                    <li class="nav-item" id="l1"><a class="nav-link" href="login.html" style="color: black; font-size: medium;">login/register</a></li>
+                    <i class="fa-regular fa-heart"></i>
+                    <li class="nav-item" id="l1"><a class="nav-link" href="shortlist.html" style="color: black; font-size: medium;">shortlist</a></li>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <li class="nav-item" id="l1"><a class="nav-link" href="cart.html" style="color: black; font-size: medium;"></i>Cart</a></li>
+    
+                    <li class="nav-item dropdown" id="l1">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black; font-size: medium;">
+                          My Account
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="profile.html" style="font-size:medium;">My Profile</a></li>
+                            <li><a class="dropdown-item" href="shortlist.html" style="font-size:medium;">My Shortlist</a></li>
+                            <li><a class="dropdown-item" href="history.html" style="font-size:medium;">Order History</a></li>
+                            <li><a class="dropdown-item" href="logout.html" style="font-size:medium;">Logout</a></li>
+        
+        
+                        </ul>
+                    </li>
+                    
+                </ul>
+               
+            </div>
+        </div>
+    </nav>
+      
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+      <div class="container-fluid">
+          
+          <!-- Toggle Button for Mobile -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <!-- Collapsible Navbar Content -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        ALL CATEGORIES
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="boys.html">BOY FASHION</a></li>
+                          <li><a class="dropdown-item" href="girls.html">GIRL FASHION</a></li>
+                          <li><a class="dropdown-item" href="footwear.html">FOOTWEAR</a></li>
+                          <li><a class="dropdown-item" href="toys.html">TOYS</a></li>
+                          <li><a class="dropdown-item" href="feeding.html">FEEDING</a></li>
+                          <li><a class="dropdown-item" href="nursery.html">NURSERY</a></li>
+    
+    
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      </ul>
+                  </li>
+    
+                  <li class="nav-item"><a class="nav-link active" href="boys.html">BOY FASHION</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="girls.html">GIRL FASHION</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="footwear.html">FOOTWEAR</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="toys.html">TOYS</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="feeding.html">FEEDING</a></li>
+                  <li class="nav-item"><a class="nav-link active" href="nursery.html">NURSERY</a></li>
+              </ul>
+          </div>
+      </div>
+    </nav>
+    
+
+
+<!-- products -->
+ <!-- Product Section -->
+ <div class="container mt-4">
+  <div class="row">
+      <!-- Product 1 -->
+      <div class="col-md-3">
+        <div class="card product-card" onclick="openForm('Product 2', 'Cute Walk by Babyhug Clogs With Backstrap Closure Burger Lion & Dino Appliques - White.', '$75', 'https://via.placeholder.com/150/33FF57')">
+            <img src="46.webp" class="card-img-top" alt="Product 1">
+              <div class="card-body">
+                  <h5 class="card-title" style="font-size: 13px;">Cute Walk by Babyhug Clogs With Backstrap Closure Burger Lion...</h5>
+                  <p class="card-text">Rs499 <del>MRP:1199</del> <span style="color: red;">(58% OFF)</span></p>
+                  <button class="btn btn-primary w-100">Add to Cart</button>
+              </div>
+          </div>
+      </div>
+      <!-- Product 2 -->
+      <div class="col-md-3">
+        <div class="card product-card" onclick="openForm('Product 2', 'KazarMax Kids Girls Ballet Flat Ballerina Flower Embellished Peep Toes- Beige.', '$75', 'https://via.placeholder.com/150/33FF57')">
+            <img src="47.webp" class="card-img-top" alt="Product 2">
+              <div class="card-body">
+                  <h5 class="card-title" style="font-size: 13px;">KazarMax Kids Girls Ballet Flat Ballerina Flower Embellished Peep...</h5>
+                  <p class="card-text">Rs876.96 <del>MRP:1050</del> <span style="color: red;">(upto 16% OFF)</span></p>
+                  <button class="btn btn-primary w-100">Add to Cart</button>
+              </div>
+          </div>
+      </div>
+      <!-- Product 3 -->
+      <div class="col-md-3">
+        <div class="card product-card" onclick="openForm('Product 2', 'KIDLINGSS Bear Applique Detailed Clogs - Pink.', '$75', 'https://via.placeholder.com/150/33FF57')">
+            <img src="48.webp" class="card-img-top" alt="Product 3">
+              <div class="card-body">
+                  <h5 class="card-title" style="font-size: 13px;">KIDLINGSS Bear Applique Detailed Clogs - Pink.</h5>
+                  <p class="card-text">Rs1336.65 <del>MRP:19995</del> <span style="color: red;">(33% OFF)</span></p>
+                  <button class="btn btn-primary w-100">Add to Cart</button>
+              </div>
+          </div>
+      </div>
+     
+      <!-- Product 4 -->
+      <div class="col-md-3">
+        <div class="card product-card" onclick="openForm('Product 2', 'Cute Walk by Babyhug Party Wear Loafer Shoes - Black.', '$75', 'https://via.placeholder.com/150/33FF57')">
+            <img src="49.webp" class="card-img-top" alt="Product 4">
+              <div class="card-body">
+                  <h5 class="card-title" style="font-size: 13px;">Cute Walk by Babyhug Party Wear Loafer Shoes - Black.</h5>
+                  <p class="card-text">Rs499 <del>MRP:1199</del> <span style="color: red;">(58% OFF)</span></p>
+                  <button class="btn btn-primary w-100">Add to Cart</button>
+              </div>
+          </div>
+      </div>
+
+       <!-- 5 -->
+       <div class="col-md-3">
+        <div class="card product-card" onclick="openForm('Product 2', 'Cute Walk by Babyhug Slip On Ballerinas with Velcro Closure & Bow Applique - Gold.', '$75', 'https://via.placeholder.com/150/33FF57')">
+            <img src="50.webp" class="card-img-top" alt="Product 3">
+            <div class="card-body">
+                <h5 class="card-title" style="font-size: 13px;">Cute Walk by Babyhug Slip On Ballerinas with Velcro Closure & Bow...</h5>
+                <p class="card-text">Rs624.15<del>MRP:1095</del> <span style="color: red;">( upto 43% OFF)</span></p>
+                <button class="btn btn-primary w-100">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+
+     <!-- 6 -->
+     <div class="col-md-3">
+        <div class="card product-card" onclick="openForm('Product 2', 'Cute Walk by Babyhug Solid Winter Boots With Velcro Closure- Blue.', '$75', 'https://via.placeholder.com/150/33FF57')">
+            <img src="51.webp" class="card-img-top" alt="Product 3">
+          <div class="card-body">
+              <h5 class="card-title" style="font-size: 13px;">Cute Walk by Babyhug Solid Winter Boots With Velcro Closure- Blue.</h5>
+              <p class="card-text">Rs1336.65 <del>MRP:1995</del> <span style="color: red;">(33% OFF)</span></p>
+              <button class="btn btn-primary w-100">Add to Cart</button>
+          </div>
+      </div>
+  </div>
+
+   <!-- 7 -->
+   <div class="col-md-3">
+    <div class="card product-card" onclick="openForm('Product 2', 'Cute Walk by Babyhug Sneaker Shoes with Velcro Closure - Pink.', '$75', 'https://via.placeholder.com/150/33FF57')">
+        <img src="52.webp" class="card-img-top" alt="Product 3">
+        <div class="card-body">
+            <h5 class="card-title" style="font-size: 13px;">Cute Walk by Babyhug Sneaker Shoes with Velcro Closure - Pink</h5>
+            <p class="card-text">Rs1537.65 <del>MRP:2295</del> <span style="color: red;">(upto 37% OFF)</span></p>
+            <button class="btn btn-primary w-100">Add to Cart</button>
+        </div>
+    </div>
+</div>
+
+
+ <!-- 8 -->
+ <div class="col-md-3">
+    <div class="card product-card" onclick="openForm('Product 2', 'KazarMax Butterfly Cluster Ballerina Flats - Pink.', '$75', 'https://via.placeholder.com/150/33FF57')">
+        <img src="53.webp" class="card-img-top" alt="Product 3">
+      <div class="card-body">
+          <h5 class="card-title" style="font-size: 13px;">KazarMax Butterfly Cluster Ballerina Flats - Pink.</h5>
+          <p class="card-text">Rs499 <del>MRP:1199</del> <span style="color: red;">(58% OFF)</span></p>
+          <button class="btn btn-primary w-100">Add to Cart</button>
+      </div>
+  </div>
+</div>
+
+
+  </div>
+</div>
+
+
+
+
+
+  <div class="row">
+      <!-- Product 9-->
+      <div class="col-md-3">
+        <div class="card product-card" onclick="openForm('Product 2', 'KATS Unisex Striped Mesh Detailed Sneaker Shoes - Navy Blue.', '$75', 'https://via.placeholder.com/150/33FF57')">
+            <img src="54.webp" class="card-img-top" alt="Product 1">
+              <div class="card-body">
+                  <h5 class="card-title" style="font-size: 13px;">KATS Unisex Striped Mesh Detailed Sneaker Shoes - Navy Blue.</h5>
+                  <p class="card-text">Rs673.72 <del>MRP:1199</del> <span style="color: red;">(44% OFF)</span></p>
+                  <button class="btn btn-primary w-100">Add to Cart</button>
+              </div>
+          </div>
+      </div>
+      <!-- Product 10 -->
+      <div class="col-md-3">
+        <div class="card product-card" onclick="openForm('Product 2', 'KazarMax Floral Strap Applique Self Design Mary Janes - Beige.', '$75', 'https://via.placeholder.com/150/33FF57')">
+            <img src="55.webp" class="card-img-top" alt="Product 2">
+              <div class="card-body">
+                  <h5 class="card-title" style="font-size: 13px;">KazarMax Floral Strap Applique Self Design Mary Janes - Beige.</h5>
+                  <p class="card-text">Rs428 <del>MRP:595</del> <span style="color: red;">(30% OFF)</span></p>
+                  <button class="btn btn-primary w-100">Add to Cart</button>
+              </div>
+          </div>
+      </div>
+      <!-- Product 11 -->
+      <div class="col-md-3">
+        <div class="card product-card" onclick="openForm('Product 2', 'Stefens Synthetic Self Design Moccasins - Brown.', '$75', 'https://via.placeholder.com/150/33FF57')">
+            <img src="56.webp" class="card-img-top" alt="Product 3">
+              <div class="card-body">
+                  <h5 class="card-title" style="font-size: 13px;">Stefens Synthetic Self Design Moccasins - Brown.</h5>
+                  <p class="card-text">Rs499 <del>MRP:1199</del> <span style="color: red;">(58% OFF)</span></p>
+                  <button class="btn btn-primary w-100">Add to Cart</button>
+              </div>
+          </div>
+           </div>
+           <!-- 12 -->
+           <div class="col-md-3">
+            <div class="card product-card" onclick="openForm('Product 2', 'Cute Walk by Babyhug Slip On Flip Flops Butterfly Print - Pink.', '$75', 'https://via.placeholder.com/150/33FF57')">
+                <img src="57.webp" class="card-img-top" alt="Product 2">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-size: 13px;">Cute Walk by Babyhug Slip On Flip Flops Butterfly Print - Pink.</h5>
+                    <p class="card-text">Rs289 <del>MRP:425</del> <span style="color: red;">(upto 425% OFF)</span></p>
+                    <button class="btn btn-primary w-100">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+
+           </div>
+         </div>
+  
+
+
+
+
+           
+<!-- Product Details Form Modal -->
+<div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="orderModalLabel">Product Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="orderForm">
+                    <!-- Product Image -->
+                
+                    <div class="mb-3">
+                        <label for="productName" class="form-label">Product Name</label>
+                        <input type="text" class="form-control" id="productName" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="productDescription" class="form-label">Description</label>
+                        <textarea class="form-control" id="productDescription" readonly></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="productPrice" class="form-label">Price</label>
+                        <input type="text" class="form-control" id="productPrice" readonly>
+                    </div>
+                    <hr>
+                    <h5>User Details</h5>
+                    <div class="mb-3">
+                        <label for="userName" class="form-label">Your Name</label>
+                        <input type="text" class="form-control" id="userName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="userEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="userEmail" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="userAddress" class="form-label">Address</label>
+                        <textarea class="form-control" id="userAddress" rows="2" required></textarea>
+                    </div>
+                    <!-- Payment Options -->
+                    <div class="mb-3">
+                        <label class="form-label">Payment Method</label>
+                        <select class="form-select" id="paymentMethod" required>
+                            <option value="Credit Card">Credit Card</option>
+                            <option value="PayPal">PayPal</option>
+                            <option value="Cash on Delivery">Cash on Delivery</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Place Order</button>
+                </form>
+                <div id="successMessage" class="alert alert-success mt-3 d-none">
+                    🎉 Order placed successfully!
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openForm(productName, productDescription, productPrice, productImage) {
+        document.getElementById('productName').value = productName;
+        document.getElementById('productDescription').value = productDescription;
+        document.getElementById('productPrice').value = productPrice;
+        
+        document.getElementById('successMessage').classList.add('d-none'); // Hide success message
+
+        var modal = new bootstrap.Modal(document.getElementById('orderModal'));
+        modal.show();
+    }
+
+    document.getElementById('orderForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        document.getElementById('successMessage').classList.remove('d-none'); // Show success message
+
+        // Reset form after delay
+        setTimeout(() => {
+            document.getElementById('orderForm').reset();
+        }, 2000);
+    });
+</script>
+
+    <!-- footer -->
+    <br><br>
+    <footer class="footer">
+      <div class="container text-center">
+    
+        <div class="container d-flex justify-content-center">
+          <p class="text-muted custom-box" style="margin-bottom: 20px;">
+              Big store for little ones
+          </p>
+      </div>
+    
+        <!-- <p class="text-muted Container" style="font-size: 20px; background-color: white; border-radius: 20px; margin-bottom: 60px; width: 400px; text-align: center; margin-left: 350px; border-radius: 20px;">Big stote for litle ones</p>
+    
+      </div> -->
+      <div class="container">
+          <div class="row">
+    
+            <div class="col-md-2">
+                <h5>Categories</h5>
+                <ul class="list-unstyled">
+                    <li><a href="boys.html">Boy Fashion</a></li>
+                    <li><a href="girls.html">Girl Fashion</a></li>
+                    <li><a href="footwear.html">Footwear</a></li>
+                    <li><a href="toys.html">Toys</a></li>
+                    <li><a href="feeding.html">Feeding</a></li>
+                    <li><a href="nursery.html">Nursery</a></li>
+    
+    
+                </ul>
+            </div>
+    
+    
+    
+              <div class="col-md-2">
+                  <h5>Company Info</h5>
+                  <ul class="list-unstyled">
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="brand.html">Brands</a></li>
+                      <li><a href="faqs.html">FAQs</a></li>
+                      <li><a href="support.html">Support</a></li>
+
+                  </ul>
+              </div>
+              <div class="col-md-2">
+                  <h5>Payment Method</h5>
+                  <ul class="list-unstyled">
+                      <li><a href="#">Credit Cards</a></li>
+                      <li><a href="#">Net Banking</a></li>
+                      <li><a href="#">ATM & Debit Cards</a></li>
+                      <li><a href="#">COD(Cash on Delivery)</a></li>
+                      <li><a href="#">Easy EMI</a></li>
+    
+                  </ul>
+              </div>
+    
+    
+              <div class="col-md-2">
+                  <h5>Policies</h5>
+                  <ul class="list-unstyled">
+                      <li><a href="shipping.htm">Shipping Policy</a></li>
+                      <li><a href="terms.html">Terms of Use</a></li>
+                      <li><a href="privacy.html">Privacy Policy</a></li>
+                  </ul>
+              </div>
+    
+          
+    
+              <div class="col-md-2">
+                  <h5>Follow Us</h5>
+                  <ul class="list-unstyled">
+                      <li><a href="https://www.facebook.com/share/15yhPE3y95/">Facebook</a></li>
+                      <li><a href="https://www.instagram.com/firstcryindia?igsh=dDh5ZDdvOW5pZ3lt">Instagram</a></li>
+                      <li><a href=" https://x.com/firstcryindia?t=l0NvYS2gDRorpPiqRN6vzw&s=08">Twitter</a></li>
+                      <li><a href="https://www.linkedin.com/company/firstcry/">Linkedin</a></li>
+                      <li><a href="https://youtube.com/@firstcryparenting?si=kcEYkOYsFC_gPt0u">Youtube</a></li>
+                      <li><a href="https://www.whatsapp.com/channel/0029VaBWq863bbV6Lw3j2U19?utm_source=YouTube&utm_medium=Link&utm_campaign=YT_ParentingWAChannel">WhatsApp</a></li>
+    
+    
+    
+                  </ul>
+                 
+              </div>
+          </div>
+      </div>
+    </footer>      
+
+
+
+</body>
+</html>

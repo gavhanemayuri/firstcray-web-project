@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .card {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Product Search</a>
+        </div>
+    </nav> -->
+
+    <!-- Search Input -->
+    <div class="container">
+        <div class="input-group mb-4 mt-4">
+            <input type="text" id="searchInput" class="form-control" placeholder="Search for products..." onkeyup="searchProducts()">
+            <button class="btn btn-primary" type="button">Search</button>
+        </div>
+        
+        <!-- Product List -->
+        <div class="row" id="productList">
+            <!-- Products will be inserted dynamically -->
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Sample product data
+        const products = [
+            { name: "T-shirt", image: "27.webp" },
+            { name: "Kids Toy Set", image: "110.webp" },
+            { name: "Maternity Dress", image: "111.webp" },
+            { name: "Diaper Pack", image: "112.webp" },
+            { name: "Baby Shoes", image: "113.webp" },
+            { name: "Stuffed Animal", image: "114.webp" },
+            { name: "Feeding Bottle", image: "115.webp" },
+            { name: "Crib Set", image: "116.webp" }
+        ];
+
+        // Load products dynamically
+        function loadProducts() {
+            let productList = document.getElementById("productList");
+            productList.innerHTML = "";
+            products.forEach((product, index) => {
+                productList.innerHTML += `
+                    <div class="col-md-3 product-card">
+                        <div class="card mb-4">
+                            <img src="${product.image}" class="card-img-top" alt="${product.name}">
+                            <div class="card-body">
+                                <h5 class="card-title">${product.name}</h5>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // Search function
+        function searchProducts() {
+            let input = document.getElementById("searchInput").value.toLowerCase();
+            let productCards = document.querySelectorAll(".product-card");
+
+            productCards.forEach(card => {
+                let title = card.querySelector(".card-title").innerText.toLowerCase();
+                if (title.includes(input)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+
+        // Load products on page load
+        document.addEventListener("DOMContentLoaded", loadProducts);
+    </script>
+
+</body>
+</html>
